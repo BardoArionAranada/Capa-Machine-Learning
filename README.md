@@ -20,6 +20,7 @@ El objetivo de este repositorio es construir la capa analitica/predictiva usando
 - Analizar los datos disponibles para definir uno o mas modelos de machine learning viables.
 - Entrenar, validar y documentar los modelos seleccionados.
 - Generar salidas finales que despues puedan ser utilizadas por el equipo de visualizacion en Qlik.
+- Preparar la exportacion principal en formato `Parquet` para el equipo de Qlik.
 
 ## Fuente principal de datos
 
@@ -47,6 +48,11 @@ Tablas principales detectadas:
 - `reports/` Resultados, tablas y entregables.
 - `data/` Archivos intermedios y exportaciones controladas.
 
+Nota:
+
+- Los archivos `.gitkeep` solo se usan para conservar carpetas vacias dentro de Git mientras el proyecto empieza.
+- Cuando cada carpeta tenga archivos reales, esos `.gitkeep` se pueden dejar o eliminar sin problema.
+
 ## Forma de trabajo
 
 Cada cambio importante se documentara en la bitacora del proyecto para dejar evidencia clara del proceso:
@@ -56,11 +62,50 @@ Cada cambio importante se documentara en la bitacora del proyecto para dejar evi
 - con que datos se trabajo
 - que resultado se obtuvo
 
+## Avance tecnico inicial
+
+Hasta este momento ya se dejo preparado el entorno local de trabajo en PostgreSQL con dos bases:
+
+- `restaurante` = capa `OLTP`
+- `restaurante_dw` = capa analitica / `Data Warehouse`
+
+Validaciones realizadas:
+
+- `restaurante`
+  - `pedido = 1200`
+  - `pago = 1204`
+  - `detallepedido = 5348`
+  - `cliente = 800`
+  - `platillo = 60`
+- `restaurante_dw`
+  - `fact_ventas = 1131`
+  - `dim_tiempo = 365`
+  - `dim_cliente = 800`
+  - `dim_empleado = 50`
+  - `dim_platillo = 60`
+  - `dim_pago = 1149`
+  - `dim_sucursal = 5`
+
+Esto significa que la fase de machine learning ya tiene un punto de partida real y ya no depende de esperar a que se construya la base desde cero.
+
+## Documentacion detallada
+
+Si se necesita ver el proceso con mas detalle, la evidencia se ira concentrando en la carpeta:
+
+- `docs/`
+
+Documentos clave hasta ahora:
+
+- `docs/bitacora.md`
+- `docs/estado_tecnico_inicial.md`
+
 ## Estado actual
 
 - [x] Se creo el repositorio base de la capa de machine learning.
 - [x] Se definio la estructura inicial de trabajo.
 - [x] Se identifico la base `restaurante_dw` como fuente principal.
+- [x] Se prepararon y validaron localmente las bases `restaurante` y `restaurante_dw`.
+- [x] Se definio `Parquet` como formato principal de salida para el equipo de Qlik.
 - [ ] Se validaran consultas del modelo OLAP / DW.
 - [ ] Se definira el primer problema de machine learning.
 - [ ] Se construira la primera tabla base para modelado.
