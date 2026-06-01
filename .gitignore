@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Archivos del sistema
+Thumbs.db
+Desktop.ini
+
+# Logs temporales
+*.log
+
+# Artefactos temporales
+tmp/
+temp/
