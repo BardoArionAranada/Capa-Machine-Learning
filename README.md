@@ -19,6 +19,7 @@ El objetivo de este repositorio es construir la capa analitica/predictiva usando
 - Consumir el modelo OLAP / Data Warehouse del proyecto restaurante.
 - Analizar los datos disponibles para definir uno o mas modelos de machine learning viables.
 - Entrenar, validar y documentar los modelos seleccionados.
+- Desarrollar la capa contemplando el uso de `4 modelos de machine learning`, aunque en esta etapa inicial todavia no se hayan definido exactamente cuales seran.
 - Generar salidas finales que despues puedan ser utilizadas por el equipo de visualizacion en Qlik.
 - Preparar la exportacion principal en formato `Parquet` para el equipo de Qlik.
 
@@ -106,6 +107,7 @@ Documentos clave hasta ahora:
 - [x] Se identifico la base `restaurante_dw` como fuente principal.
 - [x] Se prepararon y validaron localmente las bases `restaurante` y `restaurante_dw`.
 - [x] Se definio `Parquet` como formato principal de salida para el equipo de Qlik.
+- [x] Se definio que la capa trabajara con `4 modelos de machine learning` como alcance general.
 - [ ] Se validaran consultas del modelo OLAP / DW.
 - [ ] Se definira el primer problema de machine learning.
 - [ ] Se construira la primera tabla base para modelado.

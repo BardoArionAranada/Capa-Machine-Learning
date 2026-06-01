@@ -18,6 +18,7 @@ Observaciones:
 - La fase de machine learning depende de las capas previas `OLTP`, `ETL` y `OLAP`.
 - La fuente principal de datos identificada hasta este momento es `restaurante_dw`.
 - El objetivo sera entrenar modelos sobre el esquema analitico y generar salidas consumibles para Qlik.
+- El alcance general de esta capa contempla trabajar con `4 modelos de machine learning`, aunque todavia no se definan sus nombres concretos.
 
 Siguiente paso:
 
@@ -60,6 +61,11 @@ Decision para la salida del proyecto:
 
 - El formato principal que voy a preparar para el equipo de Qlik sera `Parquet`.
 - Ademas de eso, el resultado final tambien puede quedar persistido dentro de la base para dejar evidencia tecnica del proceso.
+
+Alcance adicional definido:
+
+- La capa de machine learning se desarrollara considerando `4 modelos`.
+- La seleccion exacta de esos modelos se hara despues de revisar mejor la estructura y el comportamiento de los datos del `Data Warehouse`.
 
 Siguiente paso:
 

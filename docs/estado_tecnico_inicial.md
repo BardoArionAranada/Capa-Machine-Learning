@@ -42,6 +42,7 @@ Actualmente tengo disponibles dos bases de datos en PostgreSQL local:
 - La tabla central para comenzar el trabajo es `fact_ventas`.
 - El modelado se hara tomando como fuente principal `restaurante_dw`.
 - Si se requiere enriquecer alguna variable, se puede consultar tambien la base `restaurante`.
+- El alcance general del proyecto contempla utilizar `4 modelos de machine learning`, aunque todavia no se haya cerrado la seleccion final.
 
 ## Forma prevista de entrega para Qlik
 
