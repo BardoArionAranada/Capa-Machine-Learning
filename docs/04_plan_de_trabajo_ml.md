@@ -130,3 +130,13 @@ Siguiendo el estilo de Mineria de Datos, el flujo de notebooks sera:
 
 - `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_tickets_clasificados.parquet`
 - `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_metricas_clasificacion.parquet`
+
+### Etapa 04
+
+- `parquets/04_Modelo_Regresion_Total_Pedido/04_tickets_regresion.parquet`
+- `parquets/04_Modelo_Regresion_Total_Pedido/04_metricas_regresion.parquet`
+
+### Etapa 05
+
+- `parquets/05_Modelo_Segmentacion_Clientes/05_clientes_segmentados.parquet`
+- `parquets/05_Modelo_Segmentacion_Clientes/05_metricas_segmentacion.parquet`

@@ -1,0 +1,11 @@
+[
+  "numero_tickets",
+  "gasto_total",
+  "ticket_promedio",
+  "ticket_maximo",
+  "cantidad_total_productos",
+  "promedio_productos_ticket",
+  "categorias_distintas_totales",
+  "dias_activos",
+  "dias_desde_ultimo_ticket"
+]
