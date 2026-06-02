@@ -16,3 +16,28 @@ Cada subcarpeta puede contener:
 - un archivo `.md` que explica que contiene, para que sirve y como se puede visualizar en Qlik
 
 Para evitar confusion, las metricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.
+
+## Por que existen 5 parquets
+
+Los `5` parquets no representan `5` modelos distintos.
+
+- `01` y `02` son parquets de soporte del proceso
+- `03`, `04` y `05` corresponden a los `3` modelos de Machine Learning
+
+La idea del flujo es:
+
+1. construir la base principal
+2. preparar la base para `EDA`
+3. entrenar y exportar el modelo de clasificacion
+4. entrenar y exportar el modelo de regresion
+5. entrenar y exportar el modelo de segmentacion
+
+## Que parquets le interesan a Qlik
+
+Para el equipo de Qlik, los archivos mas importantes son:
+
+- `03_tickets_clasificados.parquet`
+- `04_tickets_regresion.parquet`
+- `05_clientes_segmentados.parquet`
+
+Los archivos `01` y `02` sirven principalmente para explicar y validar el proceso interno de construccion de la base.

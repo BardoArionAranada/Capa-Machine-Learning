@@ -39,6 +39,19 @@ El modelo usa como entrada:
 - `incluye_entrada`
 - `incluye_platillo_fuerte`
 
+## Por que se eligio este modelo
+
+Se eligio **Regresion Logistica** porque el objetivo de esta etapa es responder una pregunta binaria:
+
+- si un ticket puede considerarse `alto` o `normal`
+
+Este modelo conviene porque:
+
+- es facil de interpretar
+- funciona bien como primera referencia para clasificacion
+- permite obtener una probabilidad, no solo una clase final
+- ayuda a explicar que variables se relacionan con tickets de mayor valor
+
 ## Resultado validado
 
 Metricas obtenidas en la prueba:
@@ -54,6 +67,15 @@ Metricas obtenidas en la prueba:
 El archivo principal para Qlik en esta etapa es:
 
 - `03_tickets_clasificados.parquet`
+
+## Por que le sirve al restaurante
+
+Este modelo le sirve al restaurante porque ayuda a detectar condiciones relacionadas con tickets altos, por ejemplo:
+
+- turnos donde se vende mas
+- combinaciones de consumo que elevan el ticket
+- ciudades o sucursales con mayor probabilidad de venta alta
+- contextos donde conviene poner atencion operativa o comercial
 
 ## Interpretacion rapida
 

@@ -76,6 +76,27 @@ El flujo de esta capa sera:
 4. Trabajar los modelos en Python a partir del `Parquet`.
 5. Exportar resultados en `Parquet` para el equipo de Qlik.
 
+## Como se ejecuta el proyecto
+
+La generacion de resultados se hace primero con scripts y despues se puede revisar visualmente con notebooks.
+
+Orden recomendado:
+
+1. `python .\\scripts\\01_exportar_base_tickets_olap.py`
+2. `python .\\scripts\\02_preparar_base_eda_tickets.py`
+3. `python .\\scripts\\03_entrenar_regresion_logistica.py`
+4. `python .\\scripts\\04_entrenar_regresion_total_pedido.py`
+5. `python .\\scripts\\05_entrenar_kmeans_clientes.py`
+
+Ese flujo genera los `5` parquets principales del proyecto.
+
+Despues de eso se pueden abrir los notebooks `01` a `05` para:
+
+- revisar el proceso
+- mostrar tablas y metricas
+- visualizar graficas de apoyo
+- explicar el sentido de cada modelo
+
 ## Modelos definidos
 
 Con la estructura actual del `OLAP`, los tres modelos definidos para el proyecto son:
@@ -165,15 +186,17 @@ La evidencia del trabajo se mantendra en:
 - `docs/10_paso_05_segmentacion_clientes.md`
 - `docs/11_guia_de_revision_y_uso.md`
 
-## Estructura de notebooks
+## Notebooks disponibles
 
-Esta capa se documenta tambien en notebooks `.ipynb` por etapa:
+Los notebooks sirven para explicar y revisar el proyecto de forma visual:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 3. `notebooks/03_Modelo_Clasificacion_Ticket_Alto/03_Modelo_Clasificacion_Ticket_Alto.ipynb`
 4. `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
 5. `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
+
+Los notebooks no son la ruta oficial de exportacion de los parquets finales. Esa parte se controla con los scripts para mantener el proceso estable y repetible.
 
 ## Estado actual
 

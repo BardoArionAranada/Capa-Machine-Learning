@@ -39,6 +39,19 @@ El modelo usa como entrada:
 - `incluye_entrada`
 - `incluye_platillo_fuerte`
 
+## Por que se eligio este modelo
+
+Se eligio **Regresion Lineal** porque en esta etapa la meta es estimar una variable numerica:
+
+- `total_pedido`
+
+Este modelo conviene porque:
+
+- da una base simple y facil de explicar
+- funciona como punto de partida para medir error
+- permite comparar valor real contra valor estimado
+- ayuda a detectar si el contexto del ticket explica parte del monto final
+
 ## Resultado validado
 
 Metricas obtenidas en la prueba:
@@ -52,6 +65,15 @@ Metricas obtenidas en la prueba:
 El archivo principal para Qlik en esta etapa es:
 
 - `04_tickets_regresion.parquet`
+
+## Por que le sirve al restaurante
+
+Este modelo le sirve al restaurante porque permite estimar cuanto podria valer un pedido segun su contexto. Eso ayuda para:
+
+- proyectar el valor esperado de un ticket
+- detectar pedidos atipicos
+- revisar donde el modelo falla mas
+- identificar turnos, ciudades o formas de consumo con mayor impacto en el total
 
 ## Interpretacion rapida
 

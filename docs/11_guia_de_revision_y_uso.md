@@ -21,6 +21,33 @@ La capa de Machine Learning trabaja sobre:
 5. entrenar `3` modelos
 6. exportar resultados en `Parquet`
 
+## Como generar los parquets paso a paso
+
+La generacion oficial de los parquets se hace con los scripts de la carpeta `scripts/`.
+
+Orden recomendado:
+
+1. `python .\\scripts\\01_exportar_base_tickets_olap.py`
+2. `python .\\scripts\\02_preparar_base_eda_tickets.py`
+3. `python .\\scripts\\03_entrenar_regresion_logistica.py`
+4. `python .\\scripts\\04_entrenar_regresion_total_pedido.py`
+5. `python .\\scripts\\05_entrenar_kmeans_clientes.py`
+
+Con ese orden se generan las salidas `01` a `05` dentro de `parquets/`.
+
+## Como usar los notebooks
+
+Los notebooks no son la ruta oficial para exportar los parquets finales.
+
+Su funcion principal es:
+
+- mostrar el proceso paso a paso
+- revisar visualmente la informacion
+- explicar la logica de cada etapa
+- enseñar tablas, metricas y graficas de apoyo
+
+Primero se generan los parquets con scripts y despues se abren los notebooks para revisar o demostrar el flujo.
+
 ## Parquets finales a revisar
 
 1. `parquets/01_Carga_y_Validacion_Parquet/01_base_tickets_modelado.parquet`
@@ -58,6 +85,12 @@ Sirve para comparar total real vs total estimado y analizar error del modelo.
 ### Etapa 05
 
 Sirve para segmentar clientes y construir tableros de valor, frecuencia y gasto.
+
+Para el equipo de Qlik, los archivos mas importantes son:
+
+1. `03_tickets_clasificados.parquet`
+2. `04_tickets_regresion.parquet`
+3. `05_clientes_segmentados.parquet`
 
 ## Sentido de negocio
 

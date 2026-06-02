@@ -26,6 +26,17 @@ El modelo usa como entrada:
 - `dias_activos`
 - `dias_desde_ultimo_ticket`
 
+## Por que se eligio este modelo
+
+Se eligio **K-Means** porque en esta etapa no existe una etiqueta previa de cliente y lo que se busca es descubrir grupos de comportamiento.
+
+Este modelo conviene porque:
+
+- permite segmentar clientes sin necesidad de una clase ya definida
+- resume patrones de compra en grupos faciles de interpretar
+- ayuda a encontrar clientes de bajo, medio y alto valor
+- sirve bien como primera aproximacion para analisis comercial
+
 ## Resultado validado
 
 Metricas obtenidas en la prueba:
@@ -40,6 +51,15 @@ Metricas obtenidas en la prueba:
 El archivo principal para Qlik en esta etapa es:
 
 - `05_clientes_segmentados.parquet`
+
+## Por que le sirve al restaurante
+
+Este modelo le sirve al restaurante porque permite separar a los clientes segun su comportamiento historico. Eso ayuda a:
+
+- detectar clientes de mayor valor
+- revisar frecuencia de compra y recencia
+- pensar en promociones o estrategias por segmento
+- distinguir clientes que conviene retener, activar o fidelizar
 
 ## Interpretacion rapida
 
