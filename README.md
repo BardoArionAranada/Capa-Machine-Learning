@@ -116,9 +116,10 @@ Archivos iniciales para ese paso:
 - `sql/` consultas y construccion de bases analiticas
 - `scripts/` scripts en Python para extraccion, modelado y exportacion
 - `notebooks/` exploracion y experimentacion
+- `parquets/` archivos `Parquet` organizados por etapa
 - `models/` artefactos de modelos entrenados
 - `reports/` salidas para reporte final
-- `data/` archivos temporales y exportaciones controladas
+- `data/` archivos temporales y auxiliares de trabajo
 
 ## Entrega para Qlik
 

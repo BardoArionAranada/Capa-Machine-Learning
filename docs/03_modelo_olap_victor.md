@@ -63,6 +63,16 @@ Medidas disponibles:
 - el percentil 75 de `total_pedido` es `525`
 - alrededor del `23.48%` de los tickets reconstruidos quedan clasificados como `ticket_alto` usando ese corte
 
+## Observacion tecnica importante
+
+La reconstruccion de tickets es **aproximada** porque el `OLAP` no incluye un identificador directo de pedido.
+
+Eso significa que:
+
+- el archivo `Parquet` de la etapa `01` ya se pudo generar correctamente
+- pero antes de entrenar modelos se debe revisar la coherencia entre `subtotal_ticket` y `total_pedido`
+- el notebook `01_Carga_y_Validacion_Parquet.ipynb` sera la primera validacion formal de esa consistencia
+
 ## Implicacion para la capa de Machine Learning
 
 El trabajo no se hara directo sobre la linea individual final.

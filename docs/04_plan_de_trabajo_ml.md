@@ -25,7 +25,7 @@ Archivos asociados:
 
 Salida esperada:
 
-- `data/processed/base_tickets_modelado.parquet`
+- `parquets/01_Carga_y_Validacion_Parquet/01_base_tickets_modelado.parquet`
 
 ## Tres modelos definidos
 

@@ -44,7 +44,7 @@ python .\scripts\01_exportar_base_tickets_olap.py
 
 Archivo generado:
 
-- `data/processed/base_tickets_modelado.parquet`
+- `parquets/01_Carga_y_Validacion_Parquet/01_base_tickets_modelado.parquet`
 
 ## 5. Resultado esperado del paso
 

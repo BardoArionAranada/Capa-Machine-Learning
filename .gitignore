@@ -32,3 +32,6 @@ temp/
 *.joblib
 data/processed/
 data/output/
+
+# Permitir versionar los parquets oficiales del proyecto por etapa
+!parquets/**/*.parquet

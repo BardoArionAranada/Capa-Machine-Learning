@@ -1,23 +1,25 @@
 from pathlib import Path
 import os
+import warnings
 
 import pandas as pd
-from sqlalchemy import create_engine, text
+import psycopg2
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 SQL_PATH = BASE_DIR / "sql" / "04_base_tickets_modelado.sql"
-OUTPUT_DIR = BASE_DIR / "data" / "processed"
-OUTPUT_PATH = OUTPUT_DIR / "base_tickets_modelado.parquet"
+OUTPUT_DIR = BASE_DIR / "parquets" / "01_Carga_y_Validacion_Parquet"
+OUTPUT_PATH = OUTPUT_DIR / "01_base_tickets_modelado.parquet"
 
 
-def build_connection_url() -> str:
-    host = os.getenv("PGHOST", "localhost")
-    port = os.getenv("PGPORT", "5432")
-    database = os.getenv("PGDATABASE", "restaurante")
-    user = os.getenv("PGUSER", "postgres")
-    password = os.getenv("PGPASSWORD", "postgres")
-    return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
+def build_connection_params() -> dict:
+    return {
+        "host": os.getenv("PGHOST", "localhost"),
+        "port": os.getenv("PGPORT", "5432"),
+        "dbname": os.getenv("PGDATABASE", "restaurante"),
+        "user": os.getenv("PGUSER", "postgres"),
+        "password": os.getenv("PGPASSWORD", "postgres"),
+    }
 
 
 def load_query() -> str:
@@ -27,11 +29,18 @@ def load_query() -> str:
 def export_parquet() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    engine = create_engine(build_connection_url())
     query = load_query()
 
-    with engine.connect() as connection:
-        dataframe = pd.read_sql(text(query), connection)
+    connection = psycopg2.connect(**build_connection_params())
+    try:
+        with warnings.catch_warnings():
+            warnings.filterwarnings(
+                "ignore",
+                message="pandas only supports SQLAlchemy connectable"
+            )
+            dataframe = pd.read_sql_query(query, connection)
+    finally:
+        connection.close()
 
     dataframe.to_parquet(OUTPUT_PATH, index=False)
 
