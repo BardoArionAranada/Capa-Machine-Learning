@@ -132,6 +132,23 @@ La idea es entregarles al menos:
 - una base con predicciones por ticket
 - una base con segmentos o scores por cliente
 
+## Parquets finales por etapa
+
+Dentro de la carpeta `parquets/` quedaron las salidas del proyecto organizadas por etapa:
+
+1. `01_Carga_y_Validacion_Parquet/01_base_tickets_modelado.parquet`
+2. `02_EDA_Base_Tickets/02_base_eda_tickets.parquet`
+3. `03_Modelo_Clasificacion_Ticket_Alto/03_tickets_clasificados.parquet`
+4. `04_Modelo_Regresion_Total_Pedido/04_tickets_regresion.parquet`
+5. `05_Modelo_Segmentacion_Clientes/05_clientes_segmentados.parquet`
+
+Cada etapa tiene su archivo `.md` explicando:
+
+- que contiene
+- por que sirve para el restaurante
+- por que se eligio ese enfoque
+- como se podria usar en Qlik
+
 ## Documentacion
 
 La evidencia del trabajo se mantendra en:
@@ -146,6 +163,7 @@ La evidencia del trabajo se mantendra en:
 - `docs/08_paso_03_clasificacion_ticket_alto.md`
 - `docs/09_paso_04_regresion_total_pedido.md`
 - `docs/10_paso_05_segmentacion_clientes.md`
+- `docs/11_guia_de_revision_y_uso.md`
 
 ## Estructura de notebooks
 
@@ -177,3 +195,25 @@ Siguiendo el formato trabajado en Mineria de Datos, esta capa se documentara tam
 - [x] Exportar resultados del segundo modelo a `Parquet`
 - [x] Entrenar el tercer modelo
 - [x] Exportar resultados del tercer modelo a `Parquet`
+
+## Resultados validados
+
+Resumen final de salidas:
+
+- etapa `01`: `1167` tickets modelados
+- etapa `02`: `1167` tickets para `EDA`
+- etapa `03`: clasificacion de `ticket_alto` con `accuracy = 0.6282` y `roc_auc = 0.7278`
+- etapa `04`: regresion de `total_pedido` con `mae = 92.3532` y `r2 = 0.2364`
+- etapa `05`: segmentacion de `800` clientes en `3` clusters con `silhouette = 0.3836`
+
+## Coherencia general de los resultados
+
+Los resultados son coherentes con la informacion disponible porque:
+
+- el `OLAP` de Victor se enfoca en ventas y permite reconstruir tickets
+- la base final de tickets mantiene el mismo volumen entre las etapas `01` a `04`
+- la etapa `05` reduce la granularidad a cliente, por eso baja de `1167` tickets a `800` clientes
+- los tres modelos responden a necesidades distintas del restaurante:
+  - clasificar tickets altos
+  - estimar el total del pedido
+  - segmentar clientes por comportamiento historico

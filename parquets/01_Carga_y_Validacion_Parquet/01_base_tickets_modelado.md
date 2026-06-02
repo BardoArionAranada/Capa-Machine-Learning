@@ -63,6 +63,10 @@ Este archivo sera la base de entrada para:
 2. `Regresion Lineal`
 3. `K-Means`
 
+## Por que estos datos le sirven al restaurante
+
+Esta base le sirve al restaurante porque resume el comportamiento de venta a nivel ticket. Eso permite revisar cuanto gasta cada cliente, en que ciudad se vende mas, que turnos generan tickets mas altos y que combinaciones de productos aparecen con mas frecuencia.
+
 ## Como se deberia ver en Qlik
 
 En Qlik este `Parquet` se deberia poder usar como una tabla analitica de tickets con visualizaciones como:

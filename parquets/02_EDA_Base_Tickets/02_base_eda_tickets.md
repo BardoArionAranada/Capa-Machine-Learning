@@ -46,6 +46,10 @@ Este archivo sera la entrada del notebook:
 
 - `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 
+## Por que estos datos le sirven al restaurante
+
+Esta base sirve porque ayuda a entender la calidad y el comportamiento de los datos antes de tomar decisiones con modelos predictivos. En una empresa de restaurante eso es importante para saber si los montos, pagos y subtotales son coherentes y si el patron de ventas es estable.
+
 ## Como se deberia ver en Qlik
 
 En Qlik esta base podria servir para visualizaciones como:
