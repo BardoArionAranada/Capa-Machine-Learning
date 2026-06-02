@@ -12,5 +12,7 @@ Organizacion por etapa:
 
 Cada subcarpeta puede contener:
 
-- el archivo `Parquet` de la etapa
+- el archivo `Parquet` principal de la etapa
 - un archivo `.md` que explica que contiene, para que sirve y como se puede visualizar en Qlik
+
+Para evitar confusion, las metricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.

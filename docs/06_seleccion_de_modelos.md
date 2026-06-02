@@ -39,7 +39,7 @@ Predecir si un ticket pertenece a la categoria de venta alta.
 
 ### Motivo de eleccion
 
-- se alinea con la forma de trabajo vista en Mineria de Datos
+- se alinea con una forma de trabajo clara y explicable para el proyecto
 - es interpretable
 - funciona bien como primer modelo de clasificacion tabular
 - permite comparar probabilidades y clases en Qlik
@@ -75,7 +75,7 @@ Estimar el valor de `total_pedido` a partir de las caracteristicas del ticket.
 
 ### Motivo de eleccion
 
-- se alinea con la metodologia vista en Mineria de Datos
+- se alinea con una metodologia simple y entendible para el proyecto
 - es facil de explicar y documentar
 - sirve como linea base clara para estimar `total_pedido`
 

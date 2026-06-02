@@ -7,7 +7,6 @@ Esta carpeta concentra los resultados del modelo de **Regresion Logistica** para
 ## Archivos esperados
 
 - `03_tickets_clasificados.parquet`
-- `03_metricas_clasificacion.parquet`
 
 ## Fuente de datos
 
@@ -49,6 +48,12 @@ Metricas obtenidas en la prueba:
 - `recall = 0.8364`
 - `f1 = 0.5140`
 - `roc_auc = 0.7278`
+
+## Archivo que interesa a Qlik
+
+El archivo principal para Qlik en esta etapa es:
+
+- `03_tickets_clasificados.parquet`
 
 ## Interpretacion rapida
 

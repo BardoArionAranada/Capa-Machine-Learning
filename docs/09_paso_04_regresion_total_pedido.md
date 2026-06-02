@@ -15,7 +15,6 @@ Entrenar el segundo modelo formal del proyecto usando **Regresion Lineal** para 
 ## Salidas esperadas
 
 - `parquets/04_Modelo_Regresion_Total_Pedido/04_tickets_regresion.parquet`
-- `parquets/04_Modelo_Regresion_Total_Pedido/04_metricas_regresion.parquet`
 
 ## Variables utilizadas
 

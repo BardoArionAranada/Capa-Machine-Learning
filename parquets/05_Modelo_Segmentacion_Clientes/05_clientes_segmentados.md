@@ -7,7 +7,6 @@ Esta carpeta concentra los resultados del modelo de **K-Means** para segmentacio
 ## Archivos esperados
 
 - `05_clientes_segmentados.parquet`
-- `05_metricas_segmentacion.parquet`
 
 ## Fuente de datos
 
@@ -35,6 +34,12 @@ Metricas obtenidas en la prueba:
 - `n_clusters = 3`
 - `inercia = 3206.5986`
 - `silhouette = 0.3836`
+
+## Archivo que interesa a Qlik
+
+El archivo principal para Qlik en esta etapa es:
+
+- `05_clientes_segmentados.parquet`
 
 ## Interpretacion rapida
 

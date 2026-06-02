@@ -15,7 +15,6 @@ Entrenar el primer modelo formal del proyecto usando **Regresion Logistica** par
 ## Salidas esperadas
 
 - `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_tickets_clasificados.parquet`
-- `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_metricas_clasificacion.parquet`
 
 ## Variables utilizadas
 

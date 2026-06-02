@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 import json
 
 import joblib
@@ -18,7 +18,6 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_PATH = BASE_DIR / "parquets" / "02_EDA_Base_Tickets" / "02_base_eda_tickets.parquet"
 OUTPUT_DIR = BASE_DIR / "parquets" / "04_Modelo_Regresion_Total_Pedido"
 PREDICTIONS_PATH = OUTPUT_DIR / "04_tickets_regresion.parquet"
-METRICS_PATH = OUTPUT_DIR / "04_metricas_regresion.parquet"
 MODEL_DIR = BASE_DIR / "models" / "04_Modelo_Regresion_Total_Pedido"
 MODEL_PATH = MODEL_DIR / "04_modelo_regresion_lineal.joblib"
 FEATURES_PATH = MODEL_DIR / "04_features_regresion_lineal.json"
@@ -151,15 +150,14 @@ def train_and_export() -> None:
 
     df_predictions = df_predictions.join(test_lookup, how="left")
 
-    # Exporta parquets y artefactos del modelo entrenado.
+    # Exporta el parquet principal y los artefactos del modelo entrenado.
     df_predictions.to_parquet(PREDICTIONS_PATH, index=False)
-    metrics_df.to_parquet(METRICS_PATH, index=False)
     joblib.dump(final_pipeline, MODEL_PATH)
     FEATURES_PATH.write_text(json.dumps(FEATURES, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print("Modelo de regresion entrenado correctamente")
     print(f"Predicciones guardadas en: {PREDICTIONS_PATH}")
-    print(f"Metricas guardadas en: {METRICS_PATH}")
+    print(metrics_df.to_string(index=False))
     print(f"Modelo guardado en: {MODEL_PATH}")
 
 

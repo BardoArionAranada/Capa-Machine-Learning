@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 import json
 
 import joblib
@@ -15,7 +15,6 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_PATH = BASE_DIR / "parquets" / "02_EDA_Base_Tickets" / "02_base_eda_tickets.parquet"
 OUTPUT_DIR = BASE_DIR / "parquets" / "05_Modelo_Segmentacion_Clientes"
 CLIENTS_PATH = OUTPUT_DIR / "05_clientes_segmentados.parquet"
-METRICS_PATH = OUTPUT_DIR / "05_metricas_segmentacion.parquet"
 MODEL_DIR = BASE_DIR / "models" / "05_Modelo_Segmentacion_Clientes"
 MODEL_PATH = MODEL_DIR / "05_modelo_kmeans.joblib"
 FEATURES_PATH = MODEL_DIR / "05_features_kmeans.json"
@@ -128,26 +127,23 @@ def train_and_export() -> None:
 
     # Calcula metricas basicas del clustering.
     X_transformed = pipeline.named_steps["preprocessor"].transform(clientes[FEATURES])
-    silhouette = silhouette_score(X_transformed, clientes["cluster"])
-
     metrics_df = pd.DataFrame(
         [
             {"metrica": "n_clientes", "valor": int(len(clientes))},
             {"metrica": "n_clusters", "valor": 3},
             {"metrica": "inercia", "valor": round(float(pipeline.named_steps["clusterer"].inertia_), 4)},
-            {"metrica": "silhouette", "valor": round(float(silhouette), 4)},
+            {"metrica": "silhouette", "valor": round(float(silhouette_score(X_transformed, clientes["cluster"])), 4)},
         ]
     )
 
     # Exporta la base segmentada y los artefactos del modelo.
     clientes.to_parquet(CLIENTS_PATH, index=False)
-    metrics_df.to_parquet(METRICS_PATH, index=False)
     joblib.dump(pipeline, MODEL_PATH)
     FEATURES_PATH.write_text(json.dumps(FEATURES, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print("Modelo de segmentacion entrenado correctamente")
     print(f"Clientes segmentados guardados en: {CLIENTS_PATH}")
-    print(f"Metricas guardadas en: {METRICS_PATH}")
+    print(metrics_df.to_string(index=False))
     print(f"Modelo guardado en: {MODEL_PATH}")
 
 

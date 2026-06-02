@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 import json
 
 import joblib
@@ -17,12 +17,12 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_PATH = BASE_DIR / "parquets" / "02_EDA_Base_Tickets" / "02_base_eda_tickets.parquet"
 OUTPUT_DIR = BASE_DIR / "parquets" / "03_Modelo_Clasificacion_Ticket_Alto"
 PREDICTIONS_PATH = OUTPUT_DIR / "03_tickets_clasificados.parquet"
-METRICS_PATH = OUTPUT_DIR / "03_metricas_clasificacion.parquet"
 MODEL_DIR = BASE_DIR / "models" / "03_Modelo_Clasificacion_Ticket_Alto"
 MODEL_PATH = MODEL_DIR / "03_modelo_regresion_logistica.joblib"
 FEATURES_PATH = MODEL_DIR / "03_features_regresion_logistica.json"
 
 
+# Variables seleccionadas para la clasificacion de ticket alto.
 FEATURES = [
     "dia",
     "mes",
@@ -90,7 +90,7 @@ def build_pipeline(X: pd.DataFrame) -> Pipeline:
 
 
 def train_and_export() -> None:
-    # Asegura carpetas de salida para parquets y modelo entrenado.
+    # Asegura carpetas de salida para el parquet y el modelo entrenado.
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -152,15 +152,14 @@ def train_and_export() -> None:
 
     df_predictions = df_predictions.join(test_lookup, how="left")
 
-    # Exporta parquets y artefactos para trazabilidad del proyecto.
+    # Exporta el parquet principal y los artefactos del modelo.
     df_predictions.to_parquet(PREDICTIONS_PATH, index=False)
-    metrics_df.to_parquet(METRICS_PATH, index=False)
     joblib.dump(final_pipeline, MODEL_PATH)
     FEATURES_PATH.write_text(json.dumps(FEATURES, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print("Modelo de clasificacion entrenado correctamente")
     print(f"Predicciones guardadas en: {PREDICTIONS_PATH}")
-    print(f"Métricas guardadas en: {METRICS_PATH}")
+    print(metrics_df.to_string(index=False))
     print(f"Modelo guardado en: {MODEL_PATH}")
 
 

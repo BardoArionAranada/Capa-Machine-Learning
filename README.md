@@ -126,10 +126,11 @@ La salida principal para el equipo de visualizacion sera en:
 
 - `Parquet`
 
-La idea es entregarles al menos:
+Los archivos que interesan directamente para Qlik son:
 
-- una base con predicciones por ticket
-- una base con segmentos o scores por cliente
+- `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_tickets_clasificados.parquet`
+- `parquets/04_Modelo_Regresion_Total_Pedido/04_tickets_regresion.parquet`
+- `parquets/05_Modelo_Segmentacion_Clientes/05_clientes_segmentados.parquet`
 
 ## Parquets finales por etapa
 
@@ -166,7 +167,7 @@ La evidencia del trabajo se mantendra en:
 
 ## Estructura de notebooks
 
-Siguiendo el formato trabajado en Mineria de Datos, esta capa se documentara tambien en notebooks `.ipynb` por etapa:
+Esta capa se documenta tambien en notebooks `.ipynb` por etapa:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`

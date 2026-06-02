@@ -15,7 +15,6 @@ Entrenar el tercer modelo formal del proyecto usando **K-Means** para segmentar 
 ## Salidas esperadas
 
 - `parquets/05_Modelo_Segmentacion_Clientes/05_clientes_segmentados.parquet`
-- `parquets/05_Modelo_Segmentacion_Clientes/05_metricas_segmentacion.parquet`
 
 ## Variables utilizadas
 

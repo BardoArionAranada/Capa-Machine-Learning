@@ -104,11 +104,10 @@ Se planea entregar por lo menos estos archivos:
 
 1. `tickets_predichos.parquet`
 2. `clientes_segmentados.parquet`
-3. `metricas_modelos.parquet` o una tabla equivalente
 
 ## Orden de trabajo en notebooks
 
-Siguiendo el estilo de Mineria de Datos, el flujo de notebooks sera:
+El flujo de notebooks sera:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
@@ -129,14 +128,11 @@ Siguiendo el estilo de Mineria de Datos, el flujo de notebooks sera:
 ### Etapa 03
 
 - `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_tickets_clasificados.parquet`
-- `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_metricas_clasificacion.parquet`
 
 ### Etapa 04
 
 - `parquets/04_Modelo_Regresion_Total_Pedido/04_tickets_regresion.parquet`
-- `parquets/04_Modelo_Regresion_Total_Pedido/04_metricas_regresion.parquet`
 
 ### Etapa 05
 
 - `parquets/05_Modelo_Segmentacion_Clientes/05_clientes_segmentados.parquet`
-- `parquets/05_Modelo_Segmentacion_Clientes/05_metricas_segmentacion.parquet`

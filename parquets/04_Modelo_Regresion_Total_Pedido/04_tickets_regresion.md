@@ -7,7 +7,6 @@ Esta carpeta concentra los resultados del modelo de **Regresion Lineal** para es
 ## Archivos esperados
 
 - `04_tickets_regresion.parquet`
-- `04_metricas_regresion.parquet`
 
 ## Fuente de datos
 
@@ -47,6 +46,12 @@ Metricas obtenidas en la prueba:
 - `mae = 92.3532`
 - `rmse = 111.6319`
 - `r2 = 0.2364`
+
+## Archivo que interesa a Qlik
+
+El archivo principal para Qlik en esta etapa es:
+
+- `04_tickets_regresion.parquet`
 
 ## Interpretacion rapida
 
