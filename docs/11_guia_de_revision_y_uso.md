@@ -23,30 +23,30 @@ La capa de Machine Learning trabaja sobre:
 
 ## Como generar los parquets paso a paso
 
-La generacion oficial de los parquets se hace con los scripts de la carpeta `scripts/`.
+La ruta principal del proyecto es ejecutar los notebooks por etapa.
 
 Orden recomendado:
 
-1. `python .\\scripts\\01_exportar_base_tickets_olap.py`
-2. `python .\\scripts\\02_preparar_base_eda_tickets.py`
-3. `python .\\scripts\\03_entrenar_regresion_logistica.py`
-4. `python .\\scripts\\04_entrenar_regresion_total_pedido.py`
-5. `python .\\scripts\\05_entrenar_kmeans_clientes.py`
+1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
+2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
+3. `notebooks/03_Modelo_Clasificacion_Ticket_Alto/03_Modelo_Clasificacion_Ticket_Alto.ipynb`
+4. `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
+5. `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
 
 Con ese orden se generan las salidas `01` a `05` dentro de `parquets/`.
 
 ## Como usar los notebooks
 
-Los notebooks no son la ruta oficial para exportar los parquets finales.
-
 Su funcion principal es:
 
+- ejecutar cada etapa
 - mostrar el proceso paso a paso
 - revisar visualmente la informacion
 - explicar la logica de cada etapa
 - enseñar tablas, metricas y graficas de apoyo
+- exportar el parquet correspondiente de la etapa
 
-Primero se generan los parquets con scripts y despues se abren los notebooks para revisar o demostrar el flujo.
+Los `scripts` se conservan como apoyo tecnico opcional para repetir el flujo fuera de los notebooks.
 
 ## Parquets finales a revisar
 

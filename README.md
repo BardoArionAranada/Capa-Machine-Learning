@@ -78,24 +78,24 @@ El flujo de esta capa sera:
 
 ## Como se ejecuta el proyecto
 
-La generacion de resultados se hace primero con scripts y despues se puede revisar visualmente con notebooks.
+La generacion de resultados se puede seguir directamente desde los notebooks de cada etapa.
 
 Orden recomendado:
 
-1. `python .\\scripts\\01_exportar_base_tickets_olap.py`
-2. `python .\\scripts\\02_preparar_base_eda_tickets.py`
-3. `python .\\scripts\\03_entrenar_regresion_logistica.py`
-4. `python .\\scripts\\04_entrenar_regresion_total_pedido.py`
-5. `python .\\scripts\\05_entrenar_kmeans_clientes.py`
+1. ejecutar `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
+2. ejecutar `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
+3. ejecutar `notebooks/03_Modelo_Clasificacion_Ticket_Alto/03_Modelo_Clasificacion_Ticket_Alto.ipynb`
+4. ejecutar `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
+5. ejecutar `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
 
 Ese flujo genera los `5` parquets principales del proyecto.
 
-Despues de eso se pueden abrir los notebooks `01` a `05` para:
+Cada notebook:
 
-- revisar el proceso
-- mostrar tablas y metricas
-- visualizar graficas de apoyo
-- explicar el sentido de cada modelo
+- realiza su etapa correspondiente
+- muestra tablas y metricas
+- incluye graficas de apoyo
+- exporta su `Parquet` final
 
 ## Modelos definidos
 
@@ -134,7 +134,7 @@ Archivos iniciales para ese paso:
 
 - `docs/` documentacion del proceso
 - `sql/` consultas y construccion de bases analiticas
-- `scripts/` scripts en Python para extraccion, modelado y exportacion
+- `scripts/` soporte tecnico opcional para extraccion, modelado y exportacion
 - `notebooks/` exploracion y experimentacion
 - `parquets/` archivos `Parquet` organizados por etapa
 - `models/` artefactos de modelos entrenados
@@ -188,7 +188,7 @@ La evidencia del trabajo se mantendra en:
 
 ## Notebooks disponibles
 
-Los notebooks sirven para explicar y revisar el proyecto de forma visual:
+Los notebooks sirven para ejecutar, explicar y revisar el proyecto de forma visual:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
@@ -196,7 +196,7 @@ Los notebooks sirven para explicar y revisar el proyecto de forma visual:
 4. `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
 5. `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
 
-Los notebooks no son la ruta oficial de exportacion de los parquets finales. Esa parte se controla con los scripts para mantener el proceso estable y repetible.
+Los `scripts` se mantienen como apoyo tecnico opcional, pero el flujo visible principal del proyecto ya puede ejecutarse por etapas desde los notebooks.
 
 ## Estado actual
 

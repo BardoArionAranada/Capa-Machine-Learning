@@ -17,6 +17,8 @@ Cada subcarpeta puede contener:
 
 Para evitar confusion, las metricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.
 
+Cada uno de estos archivos tambien puede regenerarse desde el notebook correspondiente de su etapa.
+
 ## Por que existen 5 parquets
 
 Los `5` parquets no representan `5` modelos distintos.
