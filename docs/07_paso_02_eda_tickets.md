@@ -12,9 +12,9 @@ Preparar una base propia para el analisis exploratorio de tickets y revisar su c
 4. guardar el resultado en la carpeta de `parquets/02`
 5. analizar esa base desde el notebook `02`
 
-## Script de esta etapa
+## Notebook de esta etapa
 
-- `scripts/02_preparar_base_eda_tickets.py`
+- `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 
 ## Salida esperada
 
@@ -36,3 +36,7 @@ Preparar una base propia para el analisis exploratorio de tickets y revisar su c
 La consistencia entre `subtotal_ticket` y `total_pedido` es baja, mientras que la consistencia entre `monto_pago` y `total_pedido` es mucho mejor.
 
 Ese hallazgo es importante porque afecta la confianza en algunas variables derivadas para los modelos posteriores.
+
+## Flujo que sigue
+
+Una vez generado `02_base_eda_tickets.parquet`, las etapas `03`, `04` y `05` ya toman ese mismo archivo como entrada principal.

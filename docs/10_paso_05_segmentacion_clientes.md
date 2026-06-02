@@ -8,9 +8,9 @@ Entrenar el tercer modelo formal del proyecto usando **K-Means** para segmentar 
 
 - `parquets/02_EDA_Base_Tickets/02_base_eda_tickets.parquet`
 
-## Script principal
+## Notebook principal
 
-- `scripts/05_entrenar_kmeans_clientes.py`
+- `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
 
 ## Salidas esperadas
 

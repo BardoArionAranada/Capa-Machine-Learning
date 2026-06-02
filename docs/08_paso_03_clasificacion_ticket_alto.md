@@ -8,9 +8,9 @@ Entrenar el primer modelo formal del proyecto usando **Regresion Logistica** par
 
 - `parquets/02_EDA_Base_Tickets/02_base_eda_tickets.parquet`
 
-## Script principal
+## Notebook principal
 
-- `scripts/03_entrenar_regresion_logistica.py`
+- `notebooks/03_Modelo_Clasificacion_Ticket_Alto/03_Modelo_Clasificacion_Ticket_Alto.ipynb`
 
 ## Salidas esperadas
 

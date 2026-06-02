@@ -28,17 +28,18 @@ Desde la carpeta del proyecto:
 python -m pip install -r requirements.txt
 ```
 
-## 3. Exportar la base de tickets a Parquet
+## 3. Generar la base de tickets desde el notebook 01
 
-Script a ejecutar:
+Notebook a ejecutar:
 
-- `scripts/01_exportar_base_tickets_olap.py`
+- `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 
-Comando:
+Ese notebook:
 
-```powershell
-python .\scripts\01_exportar_base_tickets_olap.py
-```
+- consulta el `OLAP`
+- reconstruye la base por ticket
+- valida la estructura
+- exporta el parquet de la etapa `01`
 
 ## 4. Salida esperada
 
@@ -56,8 +57,8 @@ Al terminar este paso ya debe existir:
 
 ## 6. Siguiente paso inmediato
 
-Despues de generar el `Parquet`, se debe abrir:
+Despues de cerrar la etapa `01`, se debe ejecutar:
 
-- `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
+- `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 
-para validar que el archivo se lea correctamente y que la estructura de la base quede lista para el EDA.
+para leer el parquet generado y construir la base de `EDA`.

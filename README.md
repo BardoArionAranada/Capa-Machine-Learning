@@ -130,18 +130,15 @@ Archivos iniciales para ese paso:
 
 - `sql/01_exploracion_inicial_olap_victor.sql`
 - `sql/04_base_tickets_modelado.sql`
-- `scripts/01_exportar_base_tickets_olap.py`
+- `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 
 ## Estructura del repositorio
 
 - `docs/` documentacion del proceso
 - `sql/` consultas y construccion de bases analiticas
-- `scripts/ (opcional)` soporte tecnico para extraccion, modelado y exportacion
-- `notebooks/` exploracion y experimentacion
+- `notebooks/` ejecucion, exploracion y validacion por etapa
 - `parquets/` archivos `Parquet` organizados por etapa
 - `models/` artefactos de modelos entrenados
-- `reports/` salidas para reporte final
-- `data/` archivos temporales y auxiliares de trabajo
 
 ## Entrega para Qlik
 
@@ -198,7 +195,7 @@ Los notebooks sirven para ejecutar, explicar y revisar el proyecto de forma visu
 4. `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
 5. `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
 
-Los `scripts` se mantienen como apoyo tecnico opcional, pero el flujo visible principal del proyecto ya puede ejecutarse por etapas desde los notebooks.
+El flujo principal del proyecto ya puede ejecutarse por etapas directamente desde los notebooks.
 
 ## Estado actual
 

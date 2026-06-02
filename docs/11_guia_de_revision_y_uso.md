@@ -48,8 +48,6 @@ Su funcion principal es:
 - enseñar tablas, metricas y graficas de apoyo
 - exportar el parquet correspondiente de la etapa
 
-Los `scripts` se conservan como apoyo tecnico opcional para repetir el flujo fuera de los notebooks.
-
 ## Parquets finales a revisar
 
 1. `parquets/01_Carga_y_Validacion_Parquet/01_base_tickets_modelado.parquet`

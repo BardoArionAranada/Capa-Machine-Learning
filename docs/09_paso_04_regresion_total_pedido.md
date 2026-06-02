@@ -8,9 +8,9 @@ Entrenar el segundo modelo formal del proyecto usando **Regresion Lineal** para 
 
 - `parquets/02_EDA_Base_Tickets/02_base_eda_tickets.parquet`
 
-## Script principal
+## Notebook principal
 
-- `scripts/04_entrenar_regresion_total_pedido.py`
+- `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
 
 ## Salidas esperadas
 

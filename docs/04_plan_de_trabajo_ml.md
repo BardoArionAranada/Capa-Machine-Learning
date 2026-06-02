@@ -21,7 +21,7 @@ Archivos asociados:
 
 - `sql/01_exploracion_inicial_olap_victor.sql`
 - `sql/04_base_tickets_modelado.sql`
-- `scripts/01_exportar_base_tickets_olap.py`
+- `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 
 Salida esperada:
 
