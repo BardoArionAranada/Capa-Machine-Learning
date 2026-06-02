@@ -41,6 +41,10 @@ Ese notebook:
 - valida la estructura
 - exporta el parquet de la etapa `01`
 
+Guia de apoyo para entender esta reconstruccion:
+
+- `docs/12_entender_base_tickets.md`
+
 ## 4. Salida esperada
 
 Archivo generado:
@@ -55,7 +59,19 @@ Al terminar este paso ya debe existir:
 - un `Parquet` inicial para trabajar en Python
 - el punto de partida para los tres modelos del proyecto
 
-## 6. Siguiente paso inmediato
+## 6. Que significa ticket en esta etapa
+
+En esta fase, un ticket representa una compra resumida del restaurante.
+
+La tabla `olap.fact_ventas` guarda el detalle de venta y una compra puede aparecer en varias filas porque incluye varios platillos.
+
+Por eso el paso `01` reconstruye una base donde:
+
+- `1 fila = 1 compra resumida`
+
+Ese resultado es el que se exporta como `01_base_tickets_modelado.parquet`.
+
+## 7. Siguiente paso inmediato
 
 Despues de cerrar la etapa `01`, se debe ejecutar:
 

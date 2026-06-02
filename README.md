@@ -132,6 +132,10 @@ Archivos iniciales para ese paso:
 - `sql/04_base_tickets_modelado.sql`
 - `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 
+Guia de apoyo para esta base:
+
+- `docs/12_entender_base_tickets.md`
+
 ## Estructura del repositorio
 
 - `docs/` documentacion del proceso
@@ -184,6 +188,7 @@ La evidencia del trabajo se mantendra en:
 - `docs/09_paso_04_regresion_total_pedido.md`
 - `docs/10_paso_05_segmentacion_clientes.md`
 - `docs/11_guia_de_revision_y_uso.md`
+- `docs/12_entender_base_tickets.md`
 
 ## Notebooks disponibles
 

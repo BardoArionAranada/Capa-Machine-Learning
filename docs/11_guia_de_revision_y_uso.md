@@ -27,6 +27,12 @@ La ruta principal del proyecto es ejecutar los notebooks por etapa.
 
 Cada notebook toma su entrada desde la carpeta `parquets/` del proyecto y guarda su salida tambien dentro de esa misma carpeta local. Asi el proceso queda concentrado dentro del repositorio y puede revisarse por etapas.
 
+En la etapa `01`, la entrada no es otro parquet. Esa etapa se conecta a la base `restaurante`, consulta el esquema `olap` y ejecuta la logica definida en:
+
+- `sql/04_base_tickets_modelado.sql`
+
+Con eso genera el primer parquet del flujo.
+
 Orden recomendado:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
@@ -45,8 +51,17 @@ Su funcion principal es:
 - mostrar el proceso paso a paso
 - revisar visualmente la informacion
 - explicar la logica de cada etapa
-- enseñar tablas, metricas y graficas de apoyo
+- ensenar tablas, metricas y graficas de apoyo
 - exportar el parquet correspondiente de la etapa
+
+## Como se conectan SQL, notebooks y parquets
+
+La relacion entre archivos es esta:
+
+1. `sql/04_base_tickets_modelado.sql` define la consulta de la base inicial
+2. `01_Carga_y_Validacion_Parquet.ipynb` ejecuta esa consulta y genera el parquet `01`
+3. `02_EDA_Base_Tickets.ipynb` lee el parquet `01` y genera el parquet `02`
+4. `03`, `04` y `05` leen el parquet `02` y generan sus salidas finales
 
 ## Parquets finales a revisar
 
@@ -61,6 +76,7 @@ Su funcion principal es:
 - abrir el `README.md` principal
 - revisar esta guia
 - consultar los documentos del `docs/05` al `docs/10`
+- consultar `docs/12_entender_base_tickets.md` para entender la base inicial
 - abrir los notebooks `01` a `05`
 - revisar los parquets y su documentacion por etapa
 

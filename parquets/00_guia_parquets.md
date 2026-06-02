@@ -19,6 +19,8 @@ Para evitar confusion, las metricas de los modelos quedaron integradas en los ar
 
 Cada uno de estos archivos tambien puede regenerarse desde el notebook correspondiente de su etapa.
 
+El parquet `01` nace directamente desde la base `restaurante.olap`, mientras que los demas se generan a partir de los parquets previos dentro del mismo flujo del proyecto.
+
 ## Por que existen 5 parquets
 
 Los `5` parquets no representan `5` modelos distintos.

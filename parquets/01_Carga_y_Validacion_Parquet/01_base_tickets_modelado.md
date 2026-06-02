@@ -6,6 +6,8 @@ Este `Parquet` contiene la base principal del proyecto para Machine Learning.
 
 La informacion ya no esta en granularidad de linea individual de venta, sino en una **fila por ticket reconstruido** a partir del `OLAP` de Victor.
 
+En este proyecto, un ticket representa una compra resumida del restaurante.
+
 ## Fuente
 
 - base: `restaurante`
@@ -83,3 +85,7 @@ En Qlik este `Parquet` se deberia poder usar como una tabla analitica de tickets
 Este es el `Parquet` principal de trabajo del proyecto y debe ser la referencia base para los notebooks y los modelos.
 
 La reconstruccion por ticket es funcional para arrancar el proyecto, pero debe validarse en el notebook `01` porque el `OLAP` no trae `id_pedido` y la agrupacion es una aproximacion analitica.
+
+Guia relacionada:
+
+- `docs/12_entender_base_tickets.md`
