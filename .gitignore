@@ -25,3 +25,10 @@ Desktop.ini
 # Artefactos temporales
 tmp/
 temp/
+
+# Modelos y datos generados
+*.parquet
+*.pkl
+*.joblib
+data/processed/
+data/output/
