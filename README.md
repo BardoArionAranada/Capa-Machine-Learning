@@ -142,6 +142,7 @@ La evidencia del trabajo se mantendra en:
 - `docs/04_plan_de_trabajo_ml.md`
 - `docs/05_paso_01_generar_parquet.md`
 - `docs/06_seleccion_de_modelos.md`
+- `docs/07_paso_02_eda_tickets.md`
 
 ## Estructura de notebooks
 
@@ -163,7 +164,8 @@ Siguiendo el formato trabajado en Mineria de Datos, esta capa se documentara tam
 - [x] Profesor confirmo que se puede trabajar sobre el OLAP de Victor
 - [x] Alcance ajustado a `3 modelos de machine learning`
 - [x] Formato principal de salida definido en `Parquet`
-- [ ] Explorar el OLAP con consultas de negocio
-- [ ] Generar la base de tickets para modelado
-- [ ] Exportar la base inicial a `Parquet`
+- [x] Explorar el OLAP con consultas de negocio
+- [x] Generar la base de tickets para modelado
+- [x] Exportar la base inicial a `Parquet`
+- [x] Preparar la base derivada para `EDA` en `Parquet`
 - [ ] Entrenar el primer modelo

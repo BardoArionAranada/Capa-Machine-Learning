@@ -115,3 +115,13 @@ Siguiendo el estilo de Mineria de Datos, el flujo de notebooks sera:
 3. `notebooks/03_Modelo_Clasificacion_Ticket_Alto/03_Modelo_Clasificacion_Ticket_Alto.ipynb`
 4. `notebooks/04_Modelo_Regresion_Total_Pedido/04_Modelo_Regresion_Total_Pedido.ipynb`
 5. `notebooks/05_Modelo_Segmentacion_Clientes/05_Modelo_Segmentacion_Clientes.ipynb`
+
+## Base de datos por etapa
+
+### Etapa 01
+
+- `parquets/01_Carga_y_Validacion_Parquet/01_base_tickets_modelado.parquet`
+
+### Etapa 02
+
+- `parquets/02_EDA_Base_Tickets/02_base_eda_tickets.parquet`
