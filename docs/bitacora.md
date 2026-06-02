@@ -70,3 +70,35 @@ Alcance adicional definido:
 Siguiente paso:
 
 - Conectarme desde el gestor de base de datos y revisar `fact_ventas` y las dimensiones del `Data Warehouse`.
+
+### Entrada 003 - Definicion de la conexion de trabajo sobre el modelo analitico
+
+Defini la conexion principal de trabajo para esta fase directamente sobre la base `restaurante_dw` en PostgreSQL local.
+
+Datos de la conexion:
+
+- `Host = localhost`
+- `Port = 5432`
+- `Database = restaurante_dw`
+- `Username = postgres`
+
+Interpretacion de esta conexion dentro del proyecto:
+
+- `restaurante` se conserva como capa `OLTP`
+- `restaurante_dw` se toma como modelo analitico / `Data Warehouse`
+- esta es la base desde la cual comenzare la exploracion y preparacion de datos para machine learning
+
+Acciones realizadas:
+
+- Deje documentada la conexion de trabajo.
+- Cree el primer archivo SQL del proyecto para exploracion inicial del modelo.
+- Organice las primeras consultas para revisar la tabla de hechos y su union con dimensiones.
+
+Archivos relacionados:
+
+- `docs/conexion_y_modelo_dw.md`
+- `sql/01_exploracion_inicial_dw.sql`
+
+Siguiente paso:
+
+- Ejecutar la exploracion inicial desde DBeaver y revisar el comportamiento de `fact_ventas`.
