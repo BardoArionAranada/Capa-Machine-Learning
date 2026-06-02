@@ -12,6 +12,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
+# Rutas oficiales de entrada y salida de la etapa 03.
 BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_PATH = BASE_DIR / "parquets" / "02_EDA_Base_Tickets" / "02_base_eda_tickets.parquet"
 OUTPUT_DIR = BASE_DIR / "parquets" / "03_Modelo_Clasificacion_Ticket_Alto"
@@ -51,6 +52,7 @@ TARGET = "ticket_alto"
 
 
 def build_pipeline(X: pd.DataFrame) -> Pipeline:
+    # Separa variables numericas y categoricas para el preprocesamiento.
     numericas = X.select_dtypes(include=["number", "bool"]).columns.tolist()
     categoricas = X.select_dtypes(include=["object"]).columns.tolist()
 
@@ -88,13 +90,16 @@ def build_pipeline(X: pd.DataFrame) -> Pipeline:
 
 
 def train_and_export() -> None:
+    # Asegura carpetas de salida para parquets y modelo entrenado.
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Lee la base EDA y separa features y target.
     df = pd.read_parquet(INPUT_PATH)
     X = df[FEATURES].copy()
     y = df[TARGET].copy()
 
+    # Divide la muestra para evaluar el modelo antes de entrenarlo completo.
     X_train, X_test, y_train, y_test, idx_train, idx_test = train_test_split(
         X,
         y,
@@ -104,12 +109,14 @@ def train_and_export() -> None:
         stratify=y,
     )
 
+    # Entrena un pipeline temporal para calcular metricas sobre test.
     pipeline = build_pipeline(X)
     pipeline.fit(X_train, y_train)
 
     y_pred = pipeline.predict(X_test)
     y_prob = pipeline.predict_proba(X_test)[:, 1]
 
+    # Resume las metricas principales del modelo de clasificacion.
     metrics_df = pd.DataFrame(
         [
             {"metrica": "accuracy", "valor": round(float(accuracy_score(y_test, y_pred)), 4)},
@@ -122,9 +129,11 @@ def train_and_export() -> None:
         ]
     )
 
+    # Entrena el modelo final con toda la base disponible.
     final_pipeline = build_pipeline(X)
     final_pipeline.fit(X, y)
 
+    # Genera la salida final con predicciones y probabilidades por ticket.
     df_predictions = df.copy()
     df_predictions["pred_ticket_alto"] = final_pipeline.predict(X)
     df_predictions["prob_ticket_alto"] = final_pipeline.predict_proba(X)[:, 1]
@@ -143,6 +152,7 @@ def train_and_export() -> None:
 
     df_predictions = df_predictions.join(test_lookup, how="left")
 
+    # Exporta parquets y artefactos para trazabilidad del proyecto.
     df_predictions.to_parquet(PREDICTIONS_PATH, index=False)
     metrics_df.to_parquet(METRICS_PATH, index=False)
     joblib.dump(final_pipeline, MODEL_PATH)
