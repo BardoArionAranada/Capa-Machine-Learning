@@ -102,3 +102,63 @@ Archivos relacionados:
 Siguiente paso:
 
 - Ejecutar la exploracion inicial desde DBeaver y revisar el comportamiento de `fact_ventas`.
+
+### Entrada 004 - Cambio de enfoque para trabajar especificamente con el modelo OLAP de Victor
+
+Despues de revisar mejor la situacion del proyecto, confirme que para esta fase debo trabajar especificamente con el modelo `OLAP` del equipo de Victor y no solo con el `Data Warehouse` generado por `ETL`.
+
+Ajuste realizado:
+
+- Mantengo `restaurante_dw` como referencia tecnica util.
+- Pero la fuente principal de trabajo para esta fase pasa a ser el esquema `olap` montado dentro de la base `restaurante`.
+
+Acciones realizadas:
+
+- Prepare un script para montar localmente el modelo OLAP de Victor.
+- Deje un script de validacion para confirmar que se cree `olap.fact_ventas`.
+- Documente la conexion correcta para revisarlo desde DBeaver.
+
+Archivos relacionados:
+
+- `sql/02_montaje_olap_victor.sql`
+- `sql/03_validacion_olap_victor.sql`
+- `docs/modelo_olap_victor.md`
+
+Siguiente paso:
+
+- Ejecutar el montaje del esquema `olap` y validar cuantos registros reales genera su tabla de hechos.
+
+### Entrada 005 - Montaje y validacion local del modelo OLAP de Victor
+
+Ejecute localmente el modelo `OLAP` de Victor sobre la base `restaurante`, usando un esquema separado llamado `olap`.
+
+Resultado del montaje:
+
+- El esquema `olap` se creo correctamente.
+- Las dimensiones se cargaron correctamente.
+- La tabla `olap.fact_ventas` tambien se genero correctamente.
+
+Conteos validados:
+
+- `olap.dim_tiempo = 365`
+- `olap.dim_cliente = 800`
+- `olap.dim_platillo = 60`
+- `olap.dim_sucursal = 5`
+- `olap.dim_empleado = 50`
+- `olap.dim_mesa = 80`
+- `olap.dim_metodo_pago = 4`
+- `olap.fact_ventas = 5380`
+
+Total de registros del esquema `olap`:
+
+- `6744`
+
+Conclusion de esta etapa:
+
+- Ya quedo validado que el modelo de Victor si puede montarse localmente.
+- La fuente principal de trabajo para machine learning pasa a ser `olap.fact_ventas`.
+- El modelo `OLAP` actual no llega por si solo a `10000` filas en la tabla de hechos.
+
+Siguiente paso:
+
+- Entrar desde DBeaver a la base `restaurante`, revisar el esquema `olap` y comenzar la exploracion del cubo desde esa estructura.

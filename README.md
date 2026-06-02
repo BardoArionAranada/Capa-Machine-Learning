@@ -25,19 +25,24 @@ El objetivo de este repositorio es construir la capa analitica/predictiva usando
 
 ## Fuente principal de datos
 
-Actualmente la fuente principal identificada para esta fase es la base:
+Actualmente la fuente principal identificada para esta fase es el modelo `OLAP` montado dentro de la base:
 
-- `restaurante_dw`
+- `restaurante`
+- esquema `olap`
 
-Tablas principales detectadas:
+Tabla principal para modelado:
 
-- `fact_ventas`
-- `dim_tiempo`
-- `dim_cliente`
-- `dim_empleado`
-- `dim_platillo`
-- `dim_pago`
-- `dim_sucursal`
+- `olap.fact_ventas`
+
+Dimensiones principales:
+
+- `olap.dim_tiempo`
+- `olap.dim_cliente`
+- `olap.dim_platillo`
+- `olap.dim_sucursal`
+- `olap.dim_empleado`
+- `olap.dim_mesa`
+- `olap.dim_metodo_pago`
 
 ## Estructura inicial del repositorio
 
@@ -89,6 +94,33 @@ Validaciones realizadas:
 
 Esto significa que la fase de machine learning ya tiene un punto de partida real y ya no depende de esperar a que se construya la base desde cero.
 
+## Estado actual del modelo OLAP de Victor
+
+El modelo `OLAP` de Victor ya fue montado localmente dentro de:
+
+- base `restaurante`
+- esquema `olap`
+
+Conteos validados del esquema `olap`:
+
+- `olap.dim_tiempo = 365`
+- `olap.dim_cliente = 800`
+- `olap.dim_platillo = 60`
+- `olap.dim_sucursal = 5`
+- `olap.dim_empleado = 50`
+- `olap.dim_mesa = 80`
+- `olap.dim_metodo_pago = 4`
+- `olap.fact_ventas = 5380`
+
+Total de registros del esquema `olap`:
+
+- `6744`
+
+Observacion importante:
+
+- Con el modelo OLAP de Victor, la tabla de hechos no llega por si sola a `10000` filas.
+- El proyecto completo si supera esa escala si se considera el `OLTP`, pero el `OLAP` validado actualmente produce `5380` filas en `fact_ventas`.
+
 ## Documentacion detallada
 
 Si se necesita ver el proceso con mas detalle, la evidencia se ira concentrando en la carpeta:
@@ -99,6 +131,7 @@ Documentos clave hasta ahora:
 
 - `docs/bitacora.md`
 - `docs/estado_tecnico_inicial.md`
+- `docs/modelo_olap_victor.md`
 
 ## Estado actual
 
