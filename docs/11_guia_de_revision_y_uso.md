@@ -25,6 +25,8 @@ La capa de Machine Learning trabaja sobre:
 
 La ruta principal del proyecto es ejecutar los notebooks por etapa.
 
+Cada notebook toma su entrada desde la carpeta `parquets/` del proyecto y guarda su salida tambien dentro de esa misma carpeta local. Asi el proceso queda concentrado dentro del repositorio y puede revisarse por etapas.
+
 Orden recomendado:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`

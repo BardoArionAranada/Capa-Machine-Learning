@@ -80,6 +80,8 @@ El flujo de esta capa sera:
 
 La generacion de resultados se puede seguir directamente desde los notebooks de cada etapa.
 
+Todas las rutas de entrada y salida quedaron definidas dentro de la carpeta local del proyecto. Esto significa que cada notebook toma sus parquets desde `parquets/` y vuelve a guardar sus resultados dentro de esa misma carpeta del repositorio.
+
 Orden recomendado:
 
 1. ejecutar `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
@@ -134,7 +136,7 @@ Archivos iniciales para ese paso:
 
 - `docs/` documentacion del proceso
 - `sql/` consultas y construccion de bases analiticas
-- `scripts/` soporte tecnico opcional para extraccion, modelado y exportacion
+- `scripts/ (opcional)` soporte tecnico para extraccion, modelado y exportacion
 - `notebooks/` exploracion y experimentacion
 - `parquets/` archivos `Parquet` organizados por etapa
 - `models/` artefactos de modelos entrenados
