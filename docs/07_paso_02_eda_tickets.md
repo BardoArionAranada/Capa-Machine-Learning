@@ -4,6 +4,8 @@
 
 Preparar una base propia para el analisis exploratorio de tickets y revisar su comportamiento antes de comenzar el entrenamiento de modelos.
 
+En esta etapa todavia no se entrena ningun modelo. La idea del `EDA` es entender mejor la base, revisar su consistencia y detectar comportamientos importantes antes de pasar a las etapas `03`, `04` y `05`.
+
 ## Flujo de esta etapa
 
 1. leer el `Parquet` base de la etapa `01`
@@ -31,11 +33,40 @@ Preparar una base propia para el analisis exploratorio de tickets y revisar su c
 - `ticket_consistente_pago`
 - `rango_total_pedido`
 
+## Que hace realmente esta etapa
+
+La etapa `02` toma la base por ticket generada en el paso `01` y la enriquece con columnas pensadas para exploracion.
+
+Su funcion principal es:
+
+- revisar la distribucion de los tickets
+- comparar comportamiento entre semana y fin de semana
+- revisar si `subtotal_ticket` y `total_pedido` son coherentes
+- revisar si `monto_pago` y `total_pedido` son coherentes
+- dejar una base mas clara para que los modelos posteriores trabajen sobre variables ya entendidas
+
+En resumen:
+
+- `01` = construir la base por ticket
+- `02` = entender la base por ticket
+- `03`, `04` y `05` = modelar sobre esa base
+
 ## Hallazgo principal que debe revisarse
 
 La consistencia entre `subtotal_ticket` y `total_pedido` es baja, mientras que la consistencia entre `monto_pago` y `total_pedido` es mucho mejor.
 
 Ese hallazgo es importante porque afecta la confianza en algunas variables derivadas para los modelos posteriores.
+
+## Que se debe ver al ejecutar el notebook 02
+
+Al correr `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb` se deben ver:
+
+- tablas de validacion
+- conteos de consistencia
+- un histograma de `total_pedido`
+- un boxplot de `total_pedido` por `dia_tipo`
+
+Esas salidas ayudan a revisar si la base tiene sentido antes de entrenar modelos.
 
 ## Flujo que sigue
 

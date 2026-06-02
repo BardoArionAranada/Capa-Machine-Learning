@@ -6,6 +6,8 @@ Este `Parquet` contiene la base preparada especificamente para el **analisis exp
 
 Parte de la base por ticket del paso `01`, pero agrega columnas pensadas para revisar calidad, consistencia y comportamiento general del dataset.
 
+La finalidad de esta etapa no es predecir todavia, sino entender mejor los tickets antes de pasar a los modelos.
+
 ## Nombre del archivo esperado
 
 - `02_base_eda_tickets.parquet`
@@ -46,6 +48,8 @@ Este archivo sera la entrada del notebook:
 
 - `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 
+Tambien sirve como base de entrada para que las etapas `03`, `04` y `05` tomen una version mas entendida del dataset.
+
 ## Por que estos datos le sirven al restaurante
 
 Esta base sirve porque ayuda a entender la calidad y el comportamiento de los datos antes de tomar decisiones con modelos predictivos. En una empresa de restaurante eso es importante para saber si los montos, pagos y subtotales son coherentes y si el patron de ventas es estable.
@@ -63,3 +67,9 @@ En Qlik esta base podria servir para visualizaciones como:
 ## Observacion importante
 
 Esta etapa no corrige todavia la base para modelado final; su funcion es **entender** y **evidenciar** el comportamiento real de los tickets antes de entrenar modelos.
+
+En terminos simples:
+
+- `01` construye la base
+- `02` la explora y la valida
+- `03`, `04` y `05` la usan para Machine Learning
