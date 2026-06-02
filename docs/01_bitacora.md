@@ -51,9 +51,9 @@ Conclusion:
 
 - La fuente principal de trabajo para Machine Learning pasa a ser `olap.fact_ventas`.
 
-### Entrada 004 - Confirmacion del alcance con el profesor
+### Entrada 004 - Confirmacion del alcance del proyecto
 
-Despues de revisar las capas y hablar con el profesor, quedaron confirmados estos puntos:
+Despues de revisar las capas del proyecto, quedaron definidos estos puntos:
 
 - el requisito de `10000` datos aplica al `OLTP`
 - el `OLAP` puede tener menos registros porque quedo enfocado a ventas

@@ -46,7 +46,7 @@ Sin embargo, la base principal para esta fase queda definida como:
 
 - El requisito de `10000` datos aplica al `OLTP`.
 - El `OLAP` de Victor se enfoco en ventas, por eso su volumen es menor.
-- El profesor ya confirmo que esta capa puede avanzar con los `5380` registros de `olap.fact_ventas`.
+- Esta capa puede avanzar con los `5380` registros de `olap.fact_ventas`.
 
 ## Decision de trabajo
 

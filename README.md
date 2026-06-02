@@ -12,7 +12,7 @@ El proyecto completo se construyo por capas entre varios equipos:
 4. `Machine Learning`
 5. `Visualizacion en Qlik`
 
-En esta etapa ya no se trabajara sobre el `DW` del ETL como fuente principal, sino sobre el **modelo OLAP de Victor**, tal como quedo confirmado para la fase de Machine Learning.
+En esta etapa ya no se trabajara sobre el `DW` del ETL como fuente principal, sino sobre el **modelo OLAP de Victor**, que se tomo como fuente principal para la fase de Machine Learning.
 
 ## Tema del proyecto
 
@@ -65,7 +65,6 @@ Observacion importante:
 
 - El requisito de `10000` datos se cumple en la capa `OLTP`.
 - El `OLAP` de Victor quedo enfocado a ventas, por eso su volumen es menor.
-- El profesor ya confirmo que si se puede avanzar con Machine Learning usando este `OLAP`.
 
 ## Enfoque de trabajo
 
@@ -182,7 +181,6 @@ Siguiendo el formato trabajado en Mineria de Datos, esta capa se documentara tam
 - [x] OLTP validado
 - [x] ETL revisado como antecedente tecnico
 - [x] OLAP de Victor montado y validado
-- [x] Profesor confirmo que se puede trabajar sobre el OLAP de Victor
 - [x] Alcance ajustado a `3 modelos de machine learning`
 - [x] Formato principal de salida definido en `Parquet`
 - [x] Explorar el OLAP con consultas de negocio

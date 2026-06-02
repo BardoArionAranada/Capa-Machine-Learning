@@ -2,7 +2,7 @@
 
 ## Objetivo de esta guia
 
-Este archivo resume como revisar rapidamente el proyecto y como aprovechar sus salidas para el equipo de Qlik o para la revision del profesor.
+Este archivo resume como revisar rapidamente el proyecto y como aprovechar sus salidas para el equipo de Qlik o para una revision tecnica general.
 
 ## Fuente del proyecto
 
@@ -29,7 +29,7 @@ La capa de Machine Learning trabaja sobre:
 4. `parquets/04_Modelo_Regresion_Total_Pedido/04_tickets_regresion.parquet`
 5. `parquets/05_Modelo_Segmentacion_Clientes/05_clientes_segmentados.parquet`
 
-## Como puede revisar esto el profesor
+## Como se puede revisar este proyecto
 
 - abrir el `README.md` principal
 - revisar esta guia
