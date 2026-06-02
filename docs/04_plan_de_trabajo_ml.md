@@ -125,3 +125,8 @@ Siguiendo el estilo de Mineria de Datos, el flujo de notebooks sera:
 ### Etapa 02
 
 - `parquets/02_EDA_Base_Tickets/02_base_eda_tickets.parquet`
+
+### Etapa 03
+
+- `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_tickets_clasificados.parquet`
+- `parquets/03_Modelo_Clasificacion_Ticket_Alto/03_metricas_clasificacion.parquet`

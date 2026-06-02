@@ -35,3 +35,6 @@ data/output/
 
 # Permitir versionar los parquets oficiales del proyecto por etapa
 !parquets/**/*.parquet
+
+# Permitir versionar los modelos oficiales del proyecto por etapa
+!models/**/*.joblib

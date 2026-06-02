@@ -143,6 +143,7 @@ La evidencia del trabajo se mantendra en:
 - `docs/05_paso_01_generar_parquet.md`
 - `docs/06_seleccion_de_modelos.md`
 - `docs/07_paso_02_eda_tickets.md`
+- `docs/08_paso_03_clasificacion_ticket_alto.md`
 
 ## Estructura de notebooks
 
@@ -168,4 +169,5 @@ Siguiendo el formato trabajado en Mineria de Datos, esta capa se documentara tam
 - [x] Generar la base de tickets para modelado
 - [x] Exportar la base inicial a `Parquet`
 - [x] Preparar la base derivada para `EDA` en `Parquet`
-- [ ] Entrenar el primer modelo
+- [x] Entrenar el primer modelo
+- [x] Exportar resultados del primer modelo a `Parquet`
