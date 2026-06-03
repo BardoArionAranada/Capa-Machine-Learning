@@ -4,21 +4,21 @@ Repositorio de trabajo para la fase de **Machine Learning** del proyecto final d
 
 ## Contexto del proyecto
 
-El proyecto completo se construyo por capas entre varios equipos:
+El proyecto completo se construyÃ³ por capas entre varios equipos:
 
 1. `OLTP`
 2. `ETL`
 3. `OLAP`
 4. `Machine Learning`
-5. `Visualizacion en Qlik`
+5. `VisualizaciÃ³n en Qlik`
 
-En esta etapa ya no se trabajara sobre el `DW` del ETL como fuente principal, sino sobre el **modelo OLAP de Victor**, que se tomo como fuente principal para la fase de Machine Learning.
+En esta etapa ya no se trabajarÃ¡ sobre el `DW` del ETL como fuente principal, sino sobre el **modelo OLAP de VÃ­ctor**, que se tomÃ³ como fuente principal para la fase de Machine Learning.
 
 ## Tema del proyecto
 
-La base representa la operacion de un **restaurante**.
+La base representa la operaciÃ³n de un **restaurante**.
 
-La capa de Machine Learning se enfocara especificamente en el comportamiento de **ventas** del restaurante a partir del esquema analitico `olap`.
+La capa de Machine Learning se enfocarÃ¡ especÃ­ficamente en el comportamiento de **ventas** del restaurante a partir del esquema analÃ­tico `olap`.
 
 ## Fuente principal de datos
 
@@ -44,7 +44,7 @@ Dimensiones disponibles:
 - `olap.dim_mesa`
 - `olap.dim_metodo_pago`
 
-## Estado validado del OLAP de Victor
+## Estado validado del OLAP de VÃ­ctor
 
 Conteos validados en local:
 
@@ -61,24 +61,24 @@ Total de registros del esquema `olap`:
 
 - `6744`
 
-Observacion importante:
+ObservaciÃ³n importante:
 
 - El requisito de `10000` datos se cumple en la capa `OLTP`.
-- El `OLAP` de Victor quedo enfocado a ventas, por eso su volumen es menor.
+- El `OLAP` de VÃ­ctor quedÃ³ enfocado a ventas, por eso su volumen es menor.
 
 ## Enfoque de trabajo
 
-El flujo de esta capa sera:
+El flujo de esta capa serÃ¡:
 
-1. Explorar el `OLAP` de Victor.
-2. Reconstruir una base analitica por ticket a partir de `olap.fact_ventas`.
+1. Explorar el `OLAP` de VÃ­ctor.
+2. Reconstruir una base analÃ­tica por ticket a partir de `olap.fact_ventas`.
 3. Exportar la base inicial a `Parquet`.
 4. Trabajar los modelos en Python a partir del `Parquet`.
 5. Exportar resultados en `Parquet` para el equipo de Qlik.
 
-## Como se ejecuta el proyecto
+## CÃ³mo se ejecuta el proyecto
 
-La generacion de resultados se puede seguir directamente desde los notebooks de cada etapa.
+La generaciÃ³n de resultados se puede seguir directamente desde los notebooks de cada etapa.
 
 Todas las rutas de entrada y salida quedaron definidas dentro de la carpeta local del proyecto. Esto significa que cada notebook toma sus parquets desde `parquets/` y vuelve a guardar sus resultados dentro de esa misma carpeta del repositorio.
 
@@ -95,29 +95,29 @@ Ese flujo genera los `5` parquets principales del proyecto.
 Cada notebook:
 
 - realiza su etapa correspondiente
-- muestra tablas y metricas
-- incluye graficas de apoyo
+- muestra tablas y mÃ©tricas
+- incluye grÃ¡ficas de apoyo
 - exporta su `Parquet` final
 
 ## Modelos definidos
 
 Con la estructura actual del `OLAP`, los tres modelos definidos para el proyecto son:
 
-1. **Regresion Logistica**
+1. **RegresiÃ³n LogÃ­stica**
    - objetivo: predecir si un ticket pertenece a ventas altas
    - base: tickets reconstruidos desde `olap.fact_ventas`
 
-2. **Regresion Lineal**
+2. **RegresiÃ³n Lineal**
    - objetivo: estimar el `total_pedido`
    - base: tickets reconstruidos y enriquecidos con dimensiones
 
 3. **K-Means**
    - objetivo: agrupar clientes por comportamiento de compra
-   - base: agregados historicos por cliente
+   - base: agregados histÃ³ricos por cliente
 
 ## Primer paso real del proyecto
 
-El primer paso no es entrenar modelos todavia.
+El primer paso no es entrenar modelos todavÃ­a.
 
 Primero se debe:
 
@@ -139,14 +139,14 @@ Guia de apoyo para esta base:
 ## Estructura del repositorio
 
 - `docs/` documentacion del proceso
-- `sql/` consultas y construccion de bases analiticas
-- `notebooks/` ejecucion, exploracion y validacion por etapa
+- `sql/` consultas y construccion de bases analÃ­ticas
+- `notebooks/` ejecucion, exploraciÃ³n y validaciÃ³n por etapa
 - `parquets/` archivos `Parquet` organizados por etapa
 - `models/` artefactos de modelos entrenados
 
 ## Entrega para Qlik
 
-La salida principal para el equipo de visualizacion sera en:
+La salida principal para el equipo de visualizaciÃ³n serÃ¡ en:
 
 - `Parquet`
 
@@ -171,7 +171,7 @@ Cada etapa tiene su archivo `.md` explicando:
 - que contiene
 - por que sirve para el restaurante
 - por que se eligio ese enfoque
-- como se podria usar en Qlik
+- como se podrÃ­a usar en Qlik
 
 ## Documentacion
 
@@ -208,7 +208,7 @@ El flujo principal del proyecto ya puede ejecutarse por etapas directamente desd
 - [x] Entorno local preparado en PostgreSQL
 - [x] OLTP validado
 - [x] ETL revisado como antecedente tecnico
-- [x] OLAP de Victor montado y validado
+- [x] OLAP de VÃ­ctor montado y validado
 - [x] Alcance ajustado a `3 modelos de machine learning`
 - [x] Formato principal de salida definido en `Parquet`
 - [x] Explorar el OLAP con consultas de negocio
@@ -228,18 +228,18 @@ Resumen final de salidas:
 
 - etapa `01`: `1167` tickets modelados
 - etapa `02`: `1167` tickets para `EDA`
-- etapa `03`: clasificacion de `ticket_alto` con `accuracy = 0.6282` y `roc_auc = 0.7278`
-- etapa `04`: regresion de `total_pedido` con `mae = 92.3532` y `r2 = 0.2364`
-- etapa `05`: segmentacion de `800` clientes en `3` clusters con `silhouette = 0.3836`
+- etapa `03`: clasificaciÃ³n de `ticket_alto` con `accuracy = 0.6282` y `roc_auc = 0.7278`
+- etapa `04`: regresiÃ³n de `total_pedido` con `mae = 92.3532` y `r2 = 0.2364`
+- etapa `05`: segmentaciÃ³n de `800` clientes en `3` clusters con `silhouette = 0.3836`
 
 ## Coherencia general de los resultados
 
-Los resultados son coherentes con la informacion disponible porque:
+Los resultados son coherentes con la informaciÃ³n disponible porque:
 
-- el `OLAP` de Victor se enfoca en ventas y permite reconstruir tickets
+- el `OLAP` de VÃ­ctor se enfoca en ventas y permite reconstruir tickets
 - la base final de tickets mantiene el mismo volumen entre las etapas `01` a `04`
 - la etapa `05` reduce la granularidad a cliente, por eso baja de `1167` tickets a `800` clientes
 - los tres modelos responden a necesidades distintas del restaurante:
   - clasificar tickets altos
   - estimar el total del pedido
-  - segmentar clientes por comportamiento historico
+  - segmentar clientes por comportamiento histÃ³rico

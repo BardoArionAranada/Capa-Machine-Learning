@@ -2,7 +2,7 @@
 
 ## Objetivo de esta guia
 
-Este archivo resume como revisar rapidamente el proyecto y como aprovechar sus salidas para el equipo de Qlik o para una revision tecnica general.
+Este archivo resume como revisar rapidamente el proyecto y como aprovechar sus salidas para el equipo de Qlik o para una revision tÃ©cnica general.
 
 ## Fuente del proyecto
 
@@ -14,7 +14,7 @@ La capa de Machine Learning trabaja sobre:
 
 ## Flujo seguido
 
-1. validar el `OLAP` de Victor
+1. validar el `OLAP` de VÃ­ctor
 2. reconstruir tickets
 3. generar la base principal en `Parquet`
 4. preparar la base `EDA`
@@ -25,9 +25,9 @@ La capa de Machine Learning trabaja sobre:
 
 La ruta principal del proyecto es ejecutar los notebooks por etapa.
 
-Cada notebook toma su entrada desde la carpeta `parquets/` del proyecto y guarda su salida tambien dentro de esa misma carpeta local. Asi el proceso queda concentrado dentro del repositorio y puede revisarse por etapas.
+Cada notebook toma su entrada desde la carpeta `parquets/` del proyecto y guarda su salida tambiÃ©n dentro de esa misma carpeta local. Asi el proceso queda concentrado dentro del repositorio y puede revisarse por etapas.
 
-En la etapa `01`, la entrada no es otro parquet. Esa etapa se conecta a la base `restaurante`, consulta el esquema `olap` y ejecuta la logica definida en:
+En la etapa `01`, la entrada no es otro parquet. Esa etapa se conecta a la base `restaurante`, consulta el esquema `olap` y ejecuta la lÃ³gica definida en:
 
 - `sql/04_base_tickets_modelado.sql`
 
@@ -49,14 +49,14 @@ Su funcion principal es:
 
 - ejecutar cada etapa
 - mostrar el proceso paso a paso
-- revisar visualmente la informacion
-- explicar la logica de cada etapa
-- ensenar tablas, metricas y graficas de apoyo
+- revisar visualmente la informaciÃ³n
+- explicar la lÃ³gica de cada etapa
+- ensenar tablas, mÃ©tricas y grÃ¡ficas de apoyo
 - exportar el parquet correspondiente de la etapa
 
 ## Como se conectan SQL, notebooks y parquets
 
-La relacion entre archivos es esta:
+La relaciÃ³n entre archivos es esta:
 
 1. `sql/04_base_tickets_modelado.sql` define la consulta de la base inicial
 2. `01_Carga_y_Validacion_Parquet.ipynb` ejecuta esa consulta y genera el parquet `01`
@@ -88,11 +88,11 @@ Sirve como base general de tickets para entender el negocio.
 
 ### Etapa 02
 
-Sirve para hojas exploratorias y validacion de consistencia.
+Sirve para hojas exploratorias y validaciÃ³n de consistencia.
 
 ### Etapa 03
 
-Sirve para visualizar probabilidades y clasificacion de tickets altos.
+Sirve para visualizar probabilidades y clasificaciÃ³n de tickets altos.
 
 ### Etapa 04
 
@@ -102,7 +102,7 @@ Sirve para comparar total real vs total estimado y analizar error del modelo.
 
 Sirve para segmentar clientes y construir tableros de valor, frecuencia y gasto.
 
-Para el equipo de Qlik, los archivos mas importantes son:
+Para el equipo de Qlik, los archivos mÃ¡s importantes son:
 
 1. `03_tickets_clasificados.parquet`
 2. `04_tickets_regresion.parquet`
@@ -112,11 +112,11 @@ Para el equipo de Qlik, los archivos mas importantes son:
 
 Los modelos elegidos tienen sentido para la empresa restaurante porque permiten responder tres preguntas utiles:
 
-1. **Clasificacion:** que condiciones se relacionan con tickets altos
-2. **Regresion:** cuanto podria valer un pedido segun su contexto
-3. **Segmentacion:** que tipos de clientes tiene el restaurante segun su comportamiento historico
+1. **ClasificaciÃ³n:** que condiciones se relacionan con tickets altos
+2. **RegresiÃ³n:** cuanto podrÃ­a valer un pedido segun su contexto
+3. **SegmentaciÃ³n:** que tipos de clientes tiene el restaurante segun su comportamiento histÃ³rico
 
-## Validacion general
+## Validación general
 
 Los resultados son coherentes con el volumen del `OLAP` y con la granularidad del proyecto:
 

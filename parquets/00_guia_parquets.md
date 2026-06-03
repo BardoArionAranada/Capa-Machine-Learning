@@ -15,11 +15,11 @@ Cada subcarpeta puede contener:
 - el archivo `Parquet` principal de la etapa
 - un archivo `.md` que explica que contiene, para que sirve y como se puede visualizar en Qlik
 
-Para evitar confusion, las metricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.
+Para evitar confusion, las mÃ©tricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.
 
-Cada uno de estos archivos tambien puede regenerarse desde el notebook correspondiente de su etapa.
+Cada uno de estos archivos tambiÃ©n puede regenerarse desde el notebook correspondiente de su etapa.
 
-El parquet `01` nace directamente desde la base `restaurante.olap`, mientras que los demas se generan a partir de los parquets previos dentro del mismo flujo del proyecto.
+El parquet `01` nace directamente desde la base `restaurante.olap`, mientras que los demÃ¡s se generan a partir de los parquets previos dentro del mismo flujo del proyecto.
 
 ## Por que existen 5 parquets
 
@@ -32,13 +32,13 @@ La idea del flujo es:
 
 1. construir la base principal
 2. preparar la base para `EDA`
-3. entrenar y exportar el modelo de clasificacion
-4. entrenar y exportar el modelo de regresion
-5. entrenar y exportar el modelo de segmentacion
+3. entrenar y exportar el modelo de clasificaciÃ³n
+4. entrenar y exportar el modelo de regresiÃ³n
+5. entrenar y exportar el modelo de segmentaciÃ³n
 
 ## Que parquets le interesan a Qlik
 
-Para el equipo de Qlik, los archivos mas importantes son:
+Para el equipo de Qlik, los archivos mÃ¡s importantes son:
 
 - `03_tickets_clasificados.parquet`
 - `04_tickets_regresion.parquet`

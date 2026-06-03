@@ -1,8 +1,8 @@
-# 04 Tickets Regresion
+# 04 Tickets RegresiÃ³n
 
 ## Que contiene esta etapa
 
-Esta carpeta concentra los resultados del modelo de **Regresion Lineal** para estimar el `total_pedido`.
+Esta carpeta concentra los resultados del modelo de **RegresiÃ³n Lineal** para estimar el `total_pedido`.
 
 ## Archivos esperados
 
@@ -41,7 +41,7 @@ El modelo usa como entrada:
 
 ## Por que se eligio este modelo
 
-Se eligio **Regresion Lineal** porque en esta etapa la meta es estimar una variable numerica:
+Se eligio **RegresiÃ³n Lineal** porque en esta etapa la meta es estimar una variable numerica:
 
 - `total_pedido`
 
@@ -54,7 +54,7 @@ Este modelo conviene porque:
 
 ## Resultado validado
 
-Metricas obtenidas en la prueba:
+MÃ©tricas obtenidas en la prueba:
 
 - `mae = 92.3532`
 - `rmse = 111.6319`
@@ -68,18 +68,18 @@ El archivo principal para Qlik en esta etapa es:
 
 ## Por que le sirve al restaurante
 
-Este modelo le sirve al restaurante porque permite estimar cuanto podria valer un pedido segun su contexto. Eso ayuda para:
+Este modelo le sirve al restaurante porque permite estimar cuanto podrÃ­a valer un pedido segun su contexto. Eso ayuda para:
 
 - proyectar el valor esperado de un ticket
 - detectar pedidos atipicos
-- revisar donde el modelo falla mas
+- revisar donde el modelo falla mÃ¡s
 - identificar turnos, ciudades o formas de consumo con mayor impacto en el total
 
 ## Interpretacion rapida
 
 - el modelo ya logra aproximar el total del pedido
 - el error promedio absoluto es util para comparar mejoras futuras
-- como primer modelo de regresion deja una base clara para Qlik y para el reporte final
+- como primer modelo de regresiÃ³n deja una base clara para Qlik y para el reporte final
 
 ## Como se deberia ver en Qlik
 
@@ -87,4 +87,4 @@ En Qlik esta salida deberia servir para:
 
 - comparar `total_pedido` real vs `pred_total_pedido`
 - revisar residuos por ciudad, turno y metodo de pago
-- detectar tickets donde el error del modelo sea mas alto
+- detectar tickets donde el error del modelo sea mÃ¡s alto

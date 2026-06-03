@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Tomar el `OLAP` de Victor, reconstruir una base por ticket y exportarla a `Parquet` para empezar a trabajar los modelos en Python.
+Tomar el `OLAP` de VÃ­ctor, reconstruir una base por ticket y exportarla a `Parquet` para empezar a trabajar los modelos en Python.
 
 ## Flujo de ejecucion
 

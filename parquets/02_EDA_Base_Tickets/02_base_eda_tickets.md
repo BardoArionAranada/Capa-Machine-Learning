@@ -2,11 +2,11 @@
 
 ## Que contiene este archivo
 
-Este `Parquet` contiene la base preparada especificamente para el **analisis exploratorio de datos**.
+Este `Parquet` contiene la base preparada especÃ­ficamente para el **anÃ¡lisis exploratorio de datos**.
 
 Parte de la base por ticket del paso `01`, pero agrega columnas pensadas para revisar calidad, consistencia y comportamiento general del dataset.
 
-La finalidad de esta etapa no es predecir todavia, sino entender mejor los tickets antes de pasar a los modelos.
+La finalidad de esta etapa no es predecir todavÃ­a, sino entender mejor los tickets antes de pasar a los modelos.
 
 ## Nombre del archivo esperado
 
@@ -29,7 +29,7 @@ Se genera a partir de:
 - `ticket_consistente_pago`
 - `rango_total_pedido`
 
-## Validacion actual
+## Validación actual
 
 La base fue generada y preparada para analizar:
 
@@ -42,13 +42,13 @@ Hallazgos iniciales:
 - solo `9` tickets quedaron consistentes entre `subtotal_ticket` y `total_pedido`
 - `930` tickets quedaron consistentes entre `monto_pago` y `total_pedido`
 
-## Para que sirve
+## Para quÃ© sirve
 
-Este archivo sera la entrada del notebook:
+Este archivo serÃ¡ la entrada del notebook:
 
 - `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 
-Tambien sirve como base de entrada para que las etapas `03`, `04` y `05` tomen una version mas entendida del dataset.
+Tambien sirve como base de entrada para que las etapas `03`, `04` y `05` tomen una version mÃ¡s entendida del dataset.
 
 ## Por que estos datos le sirven al restaurante
 
@@ -56,17 +56,17 @@ Esta base sirve porque ayuda a entender la calidad y el comportamiento de los da
 
 ## Como se deberia ver en Qlik
 
-En Qlik esta base podria servir para visualizaciones como:
+En Qlik esta base podrÃ­a servir para visualizaciones como:
 
-- distribucion de `total_pedido`
+- distribuciÃ³n de `total_pedido`
 - tickets altos vs normales
 - residuo entre `subtotal_ticket` y `total_pedido`
 - consistencia de pago por metodo de pago
 - comparativos por turno, ciudad y dia de la semana
 
-## Observacion importante
+## ObservaciÃ³n importante
 
-Esta etapa no corrige todavia la base para modelado final; su funcion es **entender** y **evidenciar** el comportamiento real de los tickets antes de entrenar modelos.
+Esta etapa no corrige todavÃ­a la base para modelado final; su funcion es **entender** y **evidenciar** el comportamiento real de los tickets antes de entrenar modelos.
 
 En terminos simples:
 

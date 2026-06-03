@@ -1,8 +1,8 @@
-# 10 Paso 05 - Segmentacion de Clientes
+# 10 Paso 05 - SegmentaciÃ³n de Clientes
 
 ## Objetivo
 
-Entrenar el tercer modelo formal del proyecto usando **K-Means** para segmentar clientes segun su comportamiento historico de compra.
+Entrenar el tercer modelo formal del proyecto usando **K-Means** para segmentar clientes segun su comportamiento histÃ³rico de compra.
 
 ## Entrada
 
@@ -20,7 +20,7 @@ Entrenar el tercer modelo formal del proyecto usando **K-Means** para segmentar 
 
 Se usaron agregados por cliente relacionados con frecuencia, gasto, variedad de consumo y recencia.
 
-## Metricas validadas
+## MÃ©tricas validadas
 
 - `n_clientes = 800`
 - `n_clusters = 3`
@@ -29,6 +29,6 @@ Se usaron agregados por cliente relacionados con frecuencia, gasto, variedad de 
 
 ## Conclusiones iniciales
 
-- la segmentacion ya separa clientes en tres grupos interpretables
+- la segmentaciÃ³n ya separa clientes en tres grupos interpretables
 - el resultado es util para construir tableros de valor y comportamiento
 - esta salida complementa bien las predicciones por ticket de las etapas anteriores

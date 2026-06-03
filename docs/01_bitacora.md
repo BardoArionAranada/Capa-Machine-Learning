@@ -29,9 +29,9 @@ Validaciones principales:
 - `restaurante.pago = 1204`
 - `restaurante_dw.fact_ventas = 1131`
 
-### Entrada 003 - Montaje local del modelo OLAP de Victor
+### Entrada 003 - Montaje local del modelo OLAP de VÃ­ctor
 
-Monte localmente el modelo `OLAP` de Victor dentro de:
+Monte localmente el modelo `OLAP` de VÃ­ctor dentro de:
 
 - base `restaurante`
 - esquema `olap`
@@ -56,10 +56,10 @@ Conclusion:
 Despues de revisar las capas del proyecto, quedaron definidos estos puntos:
 
 - el requisito de `10000` datos aplica al `OLTP`
-- el `OLAP` puede tener menos registros porque quedo enfocado a ventas
-- si se puede avanzar formalmente con Machine Learning usando el `OLAP` de Victor
-- el alcance final de esta capa sera de **3 modelos de machine learning**
-- la salida principal para Qlik sera en formato `Parquet`
+- el `OLAP` puede tener menos registros porque quedÃ³ enfocado a ventas
+- si se puede avanzar formalmente con Machine Learning usando el `OLAP` de VÃ­ctor
+- el alcance final de esta capa serÃ¡ de **3 modelos de machine learning**
+- la salida principal para Qlik serÃ¡ en formato `Parquet`
 
 ### Entrada 005 - Limpieza del repositorio y definicion del primer paso real
 
@@ -68,19 +68,19 @@ Actualice la documentacion del repositorio para dejarla alineada con la situacio
 Ajustes realizados:
 
 - quite la documentacion que dejaba a `restaurante_dw` como fuente principal
-- deje el proyecto enfocado solo en el `OLAP` de Victor
+- deje el proyecto enfocado solo en el `OLAP` de VÃ­ctor
 - cambie el alcance de `4 modelos` a `3 modelos`
-- documente que el primer paso real sera reconstruir una base por ticket
+- documente que el primer paso real serÃ¡ reconstruir una base por ticket
 
-Hallazgos tecnicos importantes:
+Hallazgos tÃ©cnicos importantes:
 
-- `olap.fact_ventas` tiene `5380` lineas de venta
+- `olap.fact_ventas` tiene `5380` lÃ­neas de venta
 - el cubo permite reconstruir aproximadamente `1167` tickets
 - el percentil 75 de `total_pedido` es `525`
-- eso permite proponer una variable objetivo inicial para clasificacion de `ticket_alto`
+- eso permite proponer una variable objetivo inicial para clasificaciÃ³n de `ticket_alto`
 
 Siguiente paso:
 
-- ejecutar la exploracion inicial del `OLAP`
+- ejecutar la exploraciÃ³n inicial del `OLAP`
 - generar la base de tickets para modelado
 - exportar la base a `Parquet`

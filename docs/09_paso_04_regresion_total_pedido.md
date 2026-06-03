@@ -1,8 +1,8 @@
-# 09 Paso 04 - Regresion Total Pedido
+# 09 Paso 04 - RegresiÃ³n Total Pedido
 
 ## Objetivo
 
-Entrenar el segundo modelo formal del proyecto usando **Regresion Lineal** para estimar el `total_pedido`.
+Entrenar el segundo modelo formal del proyecto usando **RegresiÃ³n Lineal** para estimar el `total_pedido`.
 
 ## Entrada
 
@@ -20,7 +20,7 @@ Entrenar el segundo modelo formal del proyecto usando **Regresion Lineal** para 
 
 Se usaron variables operativas y de contexto del ticket, evitando columnas que dieran fuga directa del valor real del pedido.
 
-## Metricas validadas
+## MÃ©tricas validadas
 
 - `mae = 92.3532`
 - `rmse = 111.6319`
@@ -28,6 +28,6 @@ Se usaron variables operativas y de contexto del ticket, evitando columnas que d
 
 ## Conclusiones iniciales
 
-- el modelo ya produce una estimacion util del total del pedido
-- el error todavia deja espacio de mejora en futuras versiones
+- el modelo ya produce una estimaciÃ³n util del total del pedido
+- el error todavÃ­a deja espacio de mejora en futuras versiones
 - como segunda capa de resultados, esta salida ya puede alimentar visualizaciones en Qlik

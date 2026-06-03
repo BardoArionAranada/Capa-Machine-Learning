@@ -1,8 +1,8 @@
-# Modelo OLAP de Victor
+# Modelo OLAP de VÃ­ctor
 
 ## Fuente oficial para esta fase
 
-La capa de **Machine Learning** trabajara especificamente con el modelo `OLAP` construido por Victor.
+La capa de **Machine Learning** trabajarÃ¡ especÃ­ficamente con el modelo `OLAP` construido por VÃ­ctor.
 
 Conexion:
 
@@ -27,7 +27,7 @@ Conexion:
 
 La tabla `olap.fact_ventas` no representa un pedido completo en una sola fila.
 
-Cada fila representa una **linea de venta** asociada a:
+Cada fila representa una **lÃ­nea de venta** asociada a:
 
 - tiempo
 - cliente
@@ -58,12 +58,12 @@ Medidas disponibles:
 
 ## Hallazgos utiles para modelado
 
-- `olap.fact_ventas` contiene `5380` lineas de venta
-- se pueden reconstruir aproximadamente `1167` tickets analiticos
+- `olap.fact_ventas` contiene `5380` lÃ­neas de venta
+- se pueden reconstruir aproximadamente `1167` tickets analÃ­ticos
 - el percentil 75 de `total_pedido` es `525`
 - alrededor del `23.48%` de los tickets reconstruidos quedan clasificados como `ticket_alto` usando ese corte
 
-## Observacion tecnica importante
+## Observacion tÃ©cnica importante
 
 La reconstruccion de tickets es **aproximada** porque el `OLAP` no incluye un identificador directo de pedido.
 
@@ -71,11 +71,11 @@ Eso significa que:
 
 - el archivo `Parquet` de la etapa `01` ya se pudo generar correctamente
 - pero antes de entrenar modelos se debe revisar la coherencia entre `subtotal_ticket` y `total_pedido`
-- el notebook `01_Carga_y_Validacion_Parquet.ipynb` sera la primera validacion formal de esa consistencia
+- el notebook `01_Carga_y_Validacion_Parquet.ipynb` serÃ¡ la primera validaciÃ³n formal de esa consistencia
 
 ## Implicacion para la capa de Machine Learning
 
-El trabajo no se hara directo sobre la linea individual final.
+El trabajo no se hara directo sobre la lÃ­nea individual final.
 
 Primero conviene construir una **base por ticket** usando agrupaciones sobre:
 
@@ -90,6 +90,6 @@ Primero conviene construir una **base por ticket** usando agrupaciones sobre:
 
 Sobre esa base se podran levantar:
 
-1. clasificacion de `ticket_alto`
-2. regresion de `total_pedido`
-3. segmentacion de clientes
+1. clasificaciÃ³n de `ticket_alto`
+2. regresiÃ³n de `total_pedido`
+3. segmentaciÃ³n de clientes

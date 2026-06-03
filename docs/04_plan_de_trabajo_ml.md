@@ -2,12 +2,12 @@
 
 ## Objetivo general
 
-Construir la capa de **Machine Learning** del proyecto restaurante a partir del `OLAP` de Victor y entregar resultados en `Parquet` para el equipo de Qlik.
+Construir la capa de **Machine Learning** del proyecto restaurante a partir del `OLAP` de VÃ­ctor y entregar resultados en `Parquet` para el equipo de Qlik.
 
 ## Flujo aprobado
 
 1. leer datos desde `restaurante.olap`
-2. construir la base analitica
+2. construir la base analÃ­tica
 3. exportar la base a `Parquet`
 4. trabajar en Python sobre el `Parquet`
 5. entrenar y evaluar `3 modelos`
@@ -15,7 +15,7 @@ Construir la capa de **Machine Learning** del proyecto restaurante a partir del 
 
 ## Primer entregable tecnico
 
-El primer entregable de esta carpeta sera una base por ticket lista para modelado.
+El primer entregable de esta carpeta serÃ¡ una base por ticket lista para modelado.
 
 Archivos asociados:
 
@@ -29,11 +29,11 @@ Salida esperada:
 
 ## Tres modelos definidos
 
-### Modelo 1 - Clasificacion
+### Modelo 1 - ClasificaciÃ³n
 
 Objetivo:
 
-- predecir si un ticket sera `ticket_alto`
+- predecir si un ticket serÃ¡ `ticket_alto`
 
 Target propuesto:
 
@@ -42,9 +42,9 @@ Target propuesto:
 
 Modelo definido:
 
-- `Regresion Logistica`
+- `Regresión LogÃ­stica`
 
-### Modelo 2 - Regresion
+### Modelo 2 - RegresiÃ³n
 
 Objetivo:
 
@@ -52,13 +52,13 @@ Objetivo:
 
 Modelo definido:
 
-- `Regresion Lineal`
+- `Regresión Lineal`
 
-### Modelo 3 - Segmentacion
+### Modelo 3 - SegmentaciÃ³n
 
 Objetivo:
 
-- agrupar clientes por comportamiento historico de compra
+- agrupar clientes por comportamiento histÃ³rico de compra
 
 Base requerida:
 
@@ -107,7 +107,7 @@ Se planea entregar por lo menos estos archivos:
 
 ## Orden de trabajo en notebooks
 
-El flujo de notebooks sera:
+El flujo de notebooks serÃ¡:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`

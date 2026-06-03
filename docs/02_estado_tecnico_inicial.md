@@ -2,7 +2,7 @@
 
 ## Objetivo de este documento
 
-Concentrar el estado tecnico de arranque de la capa de **Machine Learning** usando como fuente principal el **OLAP de Victor**.
+Concentrar el estado tecnico de arranque de la capa de **Machine Learning** usando como fuente principal el **OLAP de VÃ­ctor**.
 
 ## Bases revisadas localmente
 
@@ -16,7 +16,7 @@ Sin embargo, la base principal para esta fase queda definida como:
 - `restaurante`
 - esquema `olap`
 
-## Validacion resumida por capa
+## Validación resumida por capa
 
 ### OLTP
 
@@ -30,7 +30,7 @@ Sin embargo, la base principal para esta fase queda definida como:
 - `fact_ventas = 1131`
 - total general del `DW = 3560`
 
-### OLAP de Victor
+### OLAP de VÃ­ctor
 
 - `olap.fact_ventas = 5380`
 - `olap.dim_tiempo = 365`
@@ -45,15 +45,15 @@ Sin embargo, la base principal para esta fase queda definida como:
 ## Interpretacion
 
 - El requisito de `10000` datos aplica al `OLTP`.
-- El `OLAP` de Victor se enfoco en ventas, por eso su volumen es menor.
+- El `OLAP` de VÃ­ctor se enfoco en ventas, por eso su volumen es menor.
 - Esta capa puede avanzar con los `5380` registros de `olap.fact_ventas`.
 
 ## Decision de trabajo
 
 La capa de Machine Learning se desarrollara con este flujo:
 
-1. leer el `OLAP` de Victor
-2. reconstruir tickets analiticos
+1. leer el `OLAP` de VÃ­ctor
+2. reconstruir tickets analÃ­ticos
 3. exportar la base a `Parquet`
 4. trabajar los modelos en Python a partir del `Parquet`
 5. generar nuevos `Parquet` con resultados para Qlik
@@ -62,8 +62,8 @@ La capa de Machine Learning se desarrollara con este flujo:
 
 - `3 modelos de machine learning`
 - salida principal en `Parquet`
-- foco analitico en ventas del restaurante
+- foco analÃ­tico en ventas del restaurante
 
 ## Siguiente accion recomendada
 
-Ejecutar la exploracion inicial del `OLAP` y construir la primera base de tickets para modelado.
+Ejecutar la exploraciÃ³n inicial del `OLAP` y construir la primera base de tickets para modelado.

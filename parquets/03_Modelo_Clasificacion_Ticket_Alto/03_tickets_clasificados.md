@@ -2,7 +2,7 @@
 
 ## Que contiene esta etapa
 
-Esta carpeta concentra los resultados del modelo de **Regresion Logistica** para clasificar tickets altos.
+Esta carpeta concentra los resultados del modelo de **RegresiÃ³n LogÃ­stica** para clasificar tickets altos.
 
 ## Archivos esperados
 
@@ -41,20 +41,20 @@ El modelo usa como entrada:
 
 ## Por que se eligio este modelo
 
-Se eligio **Regresion Logistica** porque el objetivo de esta etapa es responder una pregunta binaria:
+Se eligio **RegresiÃ³n LogÃ­stica** porque el objetivo de esta etapa es responder una pregunta binaria:
 
 - si un ticket puede considerarse `alto` o `normal`
 
 Este modelo conviene porque:
 
 - es facil de interpretar
-- funciona bien como primera referencia para clasificacion
+- funciona bien como primera referencia para clasificaciÃ³n
 - permite obtener una probabilidad, no solo una clase final
 - ayuda a explicar que variables se relacionan con tickets de mayor valor
 
 ## Resultado validado
 
-Metricas obtenidas en la prueba:
+MÃ©tricas obtenidas en la prueba:
 
 - `accuracy = 0.6282`
 - `precision = 0.3710`
@@ -72,7 +72,7 @@ El archivo principal para Qlik en esta etapa es:
 
 Este modelo le sirve al restaurante porque ayuda a detectar condiciones relacionadas con tickets altos, por ejemplo:
 
-- turnos donde se vende mas
+- turnos donde se vende mÃ¡s
 - combinaciones de consumo que elevan el ticket
 - ciudades o sucursales con mayor probabilidad de venta alta
 - contextos donde conviene poner atencion operativa o comercial

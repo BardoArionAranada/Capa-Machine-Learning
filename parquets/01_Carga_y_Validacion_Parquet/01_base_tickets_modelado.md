@@ -4,7 +4,7 @@
 
 Este `Parquet` contiene la base principal del proyecto para Machine Learning.
 
-La informacion ya no esta en granularidad de linea individual de venta, sino en una **fila por ticket reconstruido** a partir del `OLAP` de Victor.
+La informaciÃ³n ya no esta en granularidad de lÃ­nea individual de venta, sino en una **fila por ticket reconstruido** a partir del `OLAP` de VÃ­ctor.
 
 En este proyecto, un ticket representa una compra resumida del restaurante.
 
@@ -18,7 +18,7 @@ En este proyecto, un ticket representa una compra resumida del restaurante.
 
 - `01_base_tickets_modelado.parquet`
 
-## Validacion actual
+## Validación actual
 
 El archivo ya fue generado y validado con:
 
@@ -57,23 +57,23 @@ El archivo ya fue generado y validado con:
 - `incluye_platillo_fuerte`
 - `ticket_alto`
 
-## Para que sirve
+## Para quÃ© sirve
 
-Este archivo sera la base de entrada para:
+Este archivo serÃ¡ la base de entrada para:
 
-1. `Regresion Logistica`
-2. `Regresion Lineal`
+1. `Regresión LogÃ­stica`
+2. `Regresión Lineal`
 3. `K-Means`
 
 ## Por que estos datos le sirven al restaurante
 
-Esta base le sirve al restaurante porque resume el comportamiento de venta a nivel ticket. Eso permite revisar cuanto gasta cada cliente, en que ciudad se vende mas, que turnos generan tickets mas altos y que combinaciones de productos aparecen con mas frecuencia.
+Esta base le sirve al restaurante porque resume el comportamiento de venta a nivel ticket. Eso permite revisar cuanto gasta cada cliente, en que ciudad se vende mÃ¡s, que turnos generan tickets mÃ¡s altos y que combinaciones de productos aparecen con mÃ¡s frecuencia.
 
 ## Como se deberia ver en Qlik
 
-En Qlik este `Parquet` se deberia poder usar como una tabla analitica de tickets con visualizaciones como:
+En Qlik este `Parquet` se deberia poder usar como una tabla analÃ­tica de tickets con visualizaciones como:
 
-- distribucion de `total_pedido`
+- distribuciÃ³n de `total_pedido`
 - tickets altos vs tickets normales
 - ventas por ciudad
 - ventas por turno
@@ -84,7 +84,7 @@ En Qlik este `Parquet` se deberia poder usar como una tabla analitica de tickets
 
 Este es el `Parquet` principal de trabajo del proyecto y debe ser la referencia base para los notebooks y los modelos.
 
-La reconstruccion por ticket es funcional para arrancar el proyecto, pero debe validarse en el notebook `01` porque el `OLAP` no trae `id_pedido` y la agrupacion es una aproximacion analitica.
+La reconstruccion por ticket es funcional para arrancar el proyecto, pero debe validarse en el notebook `01` porque el `OLAP` no trae `id_pedido` y la agrupacion es una aproximacion analÃ­tica.
 
 Guia relacionada:
 

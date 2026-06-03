@@ -12,13 +12,13 @@ No se usa la palabra ticket como algo distinto a una compra, sino como una forma
 
 - una cuenta
 - un pedido resumido
-- una compra analitica reconstruida
+- una compra analÃ­tica reconstruida
 
 ## Por que se reconstruyen tickets
 
 La tabla `olap.fact_ventas` no guarda una fila por compra completa.
 
-Lo que guarda normalmente es un nivel mas detallado, donde una misma compra puede aparecer en varias filas porque incluye varios platillos.
+Lo que guarda normalmente es un nivel mÃ¡s detallado, donde una misma compra puede aparecer en varias filas porque incluye varios platillos.
 
 Entonces ocurre esto:
 
@@ -26,7 +26,7 @@ Entonces ocurre esto:
 - cada platillo puede ocupar una fila distinta en `olap.fact_ventas`
 - una sola compra puede repetirse en varias filas
 
-Para Machine Learning conviene trabajar con una unidad mas resumida:
+Para Machine Learning conviene trabajar con una unidad mÃ¡s resumida:
 
 - `1 fila = 1 compra`
 
@@ -47,7 +47,7 @@ Su funcion es definir la consulta SQL que:
 2. une la tabla `olap.dim_platillo`
 3. agrupa varias filas que pertenecen a una misma compra
 4. calcula variables de negocio
-5. deja lista una base analitica con una fila por ticket
+5. deja lista una base analÃ­tica con una fila por ticket
 
 ## Entonces, filtra o transforma
 
@@ -75,7 +75,7 @@ Algunos ejemplos directos que salen de `04_base_tickets_modelado.sql` son:
 - `incluye_platillo_fuerte`
 - `ticket_alto`
 
-Eso convierte el detalle de venta en una base mucho mas util para modelar.
+Eso convierte el detalle de venta en una base mucho mÃ¡s util para modelar.
 
 ## Ejemplo sencillo
 
@@ -101,7 +101,7 @@ El archivo `04_base_tickets_modelado.sql` junta esas filas y las resume en un so
 
 ## Relacion entre SQL, notebook y parquet
 
-La relacion correcta del paso `01` es esta:
+La relaciÃ³n correcta del paso `01` es esta:
 
 1. `sql/04_base_tickets_modelado.sql` define la consulta
 2. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb` ejecuta esa consulta
@@ -124,7 +124,7 @@ La secuencia completa queda asi:
 4. `04` lee el parquet `02` y genera `04_tickets_regresion.parquet`
 5. `05` lee el parquet `02` y genera `05_clientes_segmentados.parquet`
 
-## Datos de conexion para DBeaver
+## Datos de conexiÃ³n para DBeaver
 
 Para revisar el OLAP desde DBeaver:
 
@@ -154,16 +154,16 @@ Ese archivo reconstruye el esquema `olap` desde cero, por lo que solo sirve para
 Trabajar por ticket permite responder preguntas utiles para el negocio, por ejemplo:
 
 - que condiciones se relacionan con compras altas
-- cuanto podria valer un pedido segun su contexto
+- cuanto podrÃ­a valer un pedido segun su contexto
 - que patrones de compra se repiten en ciertas sucursales o turnos
 - como se comportan los clientes segun su historial de consumo
 
 ## Que se debe ver al ejecutar los notebooks
 
-Al correr los notebooks no solo se generan parquets, tambien se deben ver resultados visuales y tablas de validacion:
+Al correr los notebooks no solo se generan parquets, tambiÃ©n se deben ver resultados visuales y tablas de validaciÃ³n:
 
 - `01` muestra validaciones de estructura y forma del dataset
-- `02` muestra exploracion con histogramas y boxplots
-- `03` muestra metricas, matriz de confusion y curva ROC
-- `04` muestra metricas de regresion, comparativos y residuos
+- `02` muestra exploraciÃ³n con histogramas y boxplots
+- `03` muestra mÃ©tricas, matriz de confusion y curva ROC
+- `04` muestra mÃ©tricas de regresiÃ³n, comparativos y residuos
 - `05` muestra clusters, conteos y dispersion de clientes

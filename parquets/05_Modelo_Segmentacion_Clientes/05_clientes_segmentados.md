@@ -2,7 +2,7 @@
 
 ## Que contiene esta etapa
 
-Esta carpeta concentra los resultados del modelo de **K-Means** para segmentacion de clientes.
+Esta carpeta concentra los resultados del modelo de **K-Means** para segmentaciÃ³n de clientes.
 
 ## Archivos esperados
 
@@ -35,11 +35,11 @@ Este modelo conviene porque:
 - permite segmentar clientes sin necesidad de una clase ya definida
 - resume patrones de compra en grupos faciles de interpretar
 - ayuda a encontrar clientes de bajo, medio y alto valor
-- sirve bien como primera aproximacion para analisis comercial
+- sirve bien como primera aproximacion para anÃ¡lisis comercial
 
 ## Resultado validado
 
-Metricas obtenidas en la prueba:
+MÃ©tricas obtenidas en la prueba:
 
 - `n_clientes = 800`
 - `n_clusters = 3`
@@ -54,7 +54,7 @@ El archivo principal para Qlik en esta etapa es:
 
 ## Por que le sirve al restaurante
 
-Este modelo le sirve al restaurante porque permite separar a los clientes segun su comportamiento historico. Eso ayuda a:
+Este modelo le sirve al restaurante porque permite separar a los clientes segun su comportamiento histÃ³rico. Eso ayuda a:
 
 - detectar clientes de mayor valor
 - revisar frecuencia de compra y recencia
@@ -64,8 +64,8 @@ Este modelo le sirve al restaurante porque permite separar a los clientes segun 
 ## Interpretacion rapida
 
 - el modelo ya separa a los clientes en tres grupos utiles
-- la segmentacion puede apoyar a Qlik para comparar valor y frecuencia por cliente
-- esta salida sirve bien para tableros de comportamiento historico
+- la segmentaciÃ³n puede apoyar a Qlik para comparar valor y frecuencia por cliente
+- esta salida sirve bien para tableros de comportamiento histÃ³rico
 
 ## Como se deberia ver en Qlik
 
