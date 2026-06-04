@@ -63,14 +63,7 @@ Después de revisar las capas del proyecto, quedaron definidos estos puntos:
 
 ### Entrada 005 - Limpieza del repositorio y definicion del primer paso real
 
-Actualicé la documentación del repositorio para dejarla alineada con la situación final del proyecto.
-
-Ajustes realizados:
-
-- quité la documentación que dejaba a `restaurante_dw` como fuente principal
-- dejé el proyecto enfocado solo en el `OLAP` de Víctor
-- cambie el alcance de `4 modelos` a `3 modelos`
-- documenté que el primer paso real será reconstruir una base por ticket
+La documentación del repositorio quedó alineada con la situación final del proyecto.
 
 Hallazgos técnicos importantes:
 
