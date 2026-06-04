@@ -1,8 +1,8 @@
 # 05 Clientes Segmentados
 
-## Que contiene esta etapa
+## Qué contiene esta etapa
 
-Esta carpeta concentra los resultados del modelo de **K-Means** para segmentaciÃ³n de clientes.
+Esta carpeta concentra los resultados del modelo de **K-Means** para segmentación de clientes.
 
 ## Archivos esperados
 
@@ -26,20 +26,20 @@ El modelo usa como entrada:
 - `dias_activos`
 - `dias_desde_ultimo_ticket`
 
-## Por que se eligio este modelo
+## Por que se eligió este modelo
 
-Se eligio **K-Means** porque en esta etapa no existe una etiqueta previa de cliente y lo que se busca es descubrir grupos de comportamiento.
+Se eligió **K-Means** porque en esta etapa no existe una etiqueta previa de cliente y lo que se busca es descubrir grupos de comportamiento.
 
 Este modelo conviene porque:
 
 - permite segmentar clientes sin necesidad de una clase ya definida
-- resume patrones de compra en grupos faciles de interpretar
+- resume patrones de compra en grupos fáciles de interpretar
 - ayuda a encontrar clientes de bajo, medio y alto valor
-- sirve bien como primera aproximacion para anÃ¡lisis comercial
+- sirve bien como primera aproximación para análisis comercial
 
 ## Resultado validado
 
-MÃ©tricas obtenidas en la prueba:
+Métricas obtenidas en la prueba:
 
 - `n_clientes = 800`
 - `n_clusters = 3`
@@ -52,24 +52,24 @@ El archivo principal para Qlik en esta etapa es:
 
 - `05_clientes_segmentados.parquet`
 
-## Por que le sirve al restaurante
+## Por qué le sirve al restaurante
 
-Este modelo le sirve al restaurante porque permite separar a los clientes segun su comportamiento histÃ³rico. Eso ayuda a:
+Este modelo le sirve al restaurante porque permite separar a los clientes según su comportamiento histórico. Eso ayuda a:
 
 - detectar clientes de mayor valor
 - revisar frecuencia de compra y recencia
 - pensar en promociones o estrategias por segmento
 - distinguir clientes que conviene retener, activar o fidelizar
 
-## Interpretacion rapida
+## Interpretación rápida
 
-- el modelo ya separa a los clientes en tres grupos utiles
-- la segmentaciÃ³n puede apoyar a Qlik para comparar valor y frecuencia por cliente
-- esta salida sirve bien para tableros de comportamiento histÃ³rico
+- el modelo ya separa a los clientes en tres grupos útiles
+- la segmentación puede apoyar a Qlik para comparar valor y frecuencia por cliente
+- esta salida sirve bien para tableros de comportamiento histórico
 
-## Como se deberia ver en Qlik
+## Como se debería ver en Qlik
 
-En Qlik esta salida deberia servir para:
+En Qlik esta salida debería servir para:
 
 - ver segmentos de clientes
 - comparar gasto por cluster

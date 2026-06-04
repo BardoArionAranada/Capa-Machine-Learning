@@ -2,15 +2,15 @@
 
 ## Objetivo
 
-Preparar una base propia para el anÃ¡lisis exploratorio de tickets y revisar su comportamiento antes de comenzar el entrenamiento de modelos.
+Preparar una base propia para el análisis exploratorio de tickets y revisar su comportamiento antes de comenzar el entrenamiento de modelos.
 
-En esta etapa todavÃ­a no se entrena ningun modelo. La idea del `EDA` es entender mejor la base, revisar su consistencia y detectar comportamientos importantes antes de pasar a las etapas `03`, `04` y `05`.
+En esta etapa todavía no se entrena ningún modelo. La idea del `EDA` es entender mejor la base, revisar su consistencia y detectar comportamientos importantes antes de pasar a las etapas `03`, `04` y `05`.
 
 ## Flujo de esta etapa
 
 1. leer el `Parquet` base de la etapa `01`
 2. generar una base derivada para EDA
-3. agregar columnas de apoyo para exploraciÃ³n
+3. agregar columnas de apoyo para exploración
 4. guardar el resultado en la carpeta de `parquets/02`
 5. analizar esa base desde el notebook `02`
 
@@ -33,17 +33,17 @@ En esta etapa todavÃ­a no se entrena ningun modelo. La idea del `EDA` es enten
 - `ticket_consistente_pago`
 - `rango_total_pedido`
 
-## Que hace realmente esta etapa
+## Qué hace realmente esta etapa
 
-La etapa `02` toma la base por ticket generada en el paso `01` y la enriquece con columnas pensadas para exploraciÃ³n.
+La etapa `02` toma la base por ticket generada en el paso `01` y la enriquece con columnas pensadas para exploración.
 
-Su funcion principal es:
+Su función principal es:
 
-- revisar la distribuciÃ³n de los tickets
+- revisar la distribución de los tickets
 - comparar comportamiento entre semana y fin de semana
 - revisar si `subtotal_ticket` y `total_pedido` son coherentes
 - revisar si `monto_pago` y `total_pedido` son coherentes
-- dejar una base mÃ¡s clara para que los modelos posteriores trabajen sobre variables ya entendidas
+- dejar una base más clara para que los modelos posteriores trabajen sobre variables ya entendidas
 
 En resumen:
 
@@ -57,11 +57,11 @@ La consistencia entre `subtotal_ticket` y `total_pedido` es baja, mientras que l
 
 Ese hallazgo es importante porque afecta la confianza en algunas variables derivadas para los modelos posteriores.
 
-## Que se debe ver al ejecutar el notebook 02
+## Qué se debe ver al ejecutar el notebook 02
 
 Al correr `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb` se deben ver:
 
-- tablas de validaciÃ³n
+- tablas de validación
 - conteos de consistencia
 - un histograma de `total_pedido`
 - un boxplot de `total_pedido` por `dia_tipo`

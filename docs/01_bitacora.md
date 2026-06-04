@@ -1,21 +1,21 @@
-# Bitacora del Proyecto
+# Bitácora del Proyecto
 
 ## 2026-06-01
 
-### Entrada 001 - Creacion del repositorio de trabajo
+### Entrada 001 - Creación del repositorio de trabajo
 
-Cree la carpeta de trabajo para la fase de **Machine Learning** y la prepare como repositorio independiente para subirla a GitHub.
+Creé la carpeta de trabajo para la fase de **Machine Learning** y la prepare como repositorio independiente para subirla a GitHub.
 
 Acciones realizadas:
 
-- Defini la estructura base del proyecto.
+- Definí la estructura base del proyecto.
 - Agregue un `README.md` con el contexto de la capa.
 - Agregue un `.gitignore` inicial.
-- Cree esta bitacora para documentar el proceso paso a paso.
+- Creé esta bitácora para documentar el proceso paso a paso.
 
-### Entrada 002 - Preparacion del entorno local y carga de bases
+### Entrada 002 - Preparación del entorno local y carga de bases
 
-Prepare el entorno local de PostgreSQL para revisar las capas previas del proyecto y poder trabajar sin depender de resultados parciales.
+Preparé el entorno local de PostgreSQL para revisar las capas previas del proyecto y poder trabajar sin depender de resultados parciales.
 
 Bases cargadas localmente:
 
@@ -29,9 +29,9 @@ Validaciones principales:
 - `restaurante.pago = 1204`
 - `restaurante_dw.fact_ventas = 1131`
 
-### Entrada 003 - Montaje local del modelo OLAP de VÃ­ctor
+### Entrada 003 - Montaje local del modelo OLAP de Víctor
 
-Monte localmente el modelo `OLAP` de VÃ­ctor dentro de:
+Monté localmente el modelo `OLAP` de Víctor dentro de:
 
 - base `restaurante`
 - esquema `olap`
@@ -47,40 +47,40 @@ Conteos validados:
 - `olap.dim_mesa = 80`
 - `olap.dim_metodo_pago = 4`
 
-Conclusion:
+Conclusión:
 
 - La fuente principal de trabajo para Machine Learning pasa a ser `olap.fact_ventas`.
 
-### Entrada 004 - Confirmacion del alcance del proyecto
+### Entrada 004 - Confirmación del alcance del proyecto
 
-Despues de revisar las capas del proyecto, quedaron definidos estos puntos:
+Después de revisar las capas del proyecto, quedaron definidos estos puntos:
 
 - el requisito de `10000` datos aplica al `OLTP`
-- el `OLAP` puede tener menos registros porque quedÃ³ enfocado a ventas
-- si se puede avanzar formalmente con Machine Learning usando el `OLAP` de VÃ­ctor
-- el alcance final de esta capa serÃ¡ de **3 modelos de machine learning**
-- la salida principal para Qlik serÃ¡ en formato `Parquet`
+- el `OLAP` puede tener menos registros porque quedó enfocado a ventas
+- si se puede avanzar formalmente con Machine Learning usando el `OLAP` de Víctor
+- el alcance final de esta capa será de **3 modelos de machine learning**
+- la salida principal para Qlik será en formato `Parquet`
 
 ### Entrada 005 - Limpieza del repositorio y definicion del primer paso real
 
-Actualice la documentacion del repositorio para dejarla alineada con la situacion final del proyecto.
+Actualicé la documentación del repositorio para dejarla alineada con la situación final del proyecto.
 
 Ajustes realizados:
 
-- quite la documentacion que dejaba a `restaurante_dw` como fuente principal
-- deje el proyecto enfocado solo en el `OLAP` de VÃ­ctor
+- quité la documentación que dejaba a `restaurante_dw` como fuente principal
+- dejé el proyecto enfocado solo en el `OLAP` de Víctor
 - cambie el alcance de `4 modelos` a `3 modelos`
-- documente que el primer paso real serÃ¡ reconstruir una base por ticket
+- documenté que el primer paso real será reconstruir una base por ticket
 
-Hallazgos tÃ©cnicos importantes:
+Hallazgos técnicos importantes:
 
-- `olap.fact_ventas` tiene `5380` lÃ­neas de venta
+- `olap.fact_ventas` tiene `5380` líneas de venta
 - el cubo permite reconstruir aproximadamente `1167` tickets
 - el percentil 75 de `total_pedido` es `525`
-- eso permite proponer una variable objetivo inicial para clasificaciÃ³n de `ticket_alto`
+- eso permite proponer una variable objetivo inicial para clasificación de `ticket_alto`
 
 Siguiente paso:
 
-- ejecutar la exploraciÃ³n inicial del `OLAP`
+- ejecutar la exploración inicial del `OLAP`
 - generar la base de tickets para modelado
 - exportar la base a `Parquet`

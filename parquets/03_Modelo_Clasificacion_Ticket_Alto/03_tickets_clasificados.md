@@ -1,8 +1,8 @@
-# 03 Tickets Clasificados
+# 03 Tickets Clasíficados
 
-## Que contiene esta etapa
+## Qué contiene esta etapa
 
-Esta carpeta concentra los resultados del modelo de **RegresiÃ³n LogÃ­stica** para clasificar tickets altos.
+Esta carpeta concentra los resultados del modelo de **Regresión Logística** para clasificar tickets altos.
 
 ## Archivos esperados
 
@@ -30,7 +30,7 @@ El modelo usa como entrada:
 - `numero_mesa`
 - `capacidad_mesa`
 - `metodo_pago`
-- `lineas_ticket`
+- `líneas_ticket`
 - `cantidad_total`
 - `platillos_distintos`
 - `categorias_distintas`
@@ -39,22 +39,22 @@ El modelo usa como entrada:
 - `incluye_entrada`
 - `incluye_platillo_fuerte`
 
-## Por que se eligio este modelo
+## Por que se eligió este modelo
 
-Se eligio **RegresiÃ³n LogÃ­stica** porque el objetivo de esta etapa es responder una pregunta binaria:
+Se eligió **Regresión Logística** porque el objetivo de esta etapa es responder una pregunta binaria:
 
 - si un ticket puede considerarse `alto` o `normal`
 
 Este modelo conviene porque:
 
-- es facil de interpretar
-- funciona bien como primera referencia para clasificaciÃ³n
+- es fácil de interpretar
+- funciona bien como primera referencia para clasificación
 - permite obtener una probabilidad, no solo una clase final
-- ayuda a explicar que variables se relacionan con tickets de mayor valor
+- ayuda a explicar qué variables se relaciónan con tickets de mayor valor
 
 ## Resultado validado
 
-MÃ©tricas obtenidas en la prueba:
+Métricas obtenidas en la prueba:
 
 - `accuracy = 0.6282`
 - `precision = 0.3710`
@@ -68,24 +68,24 @@ El archivo principal para Qlik en esta etapa es:
 
 - `03_tickets_clasificados.parquet`
 
-## Por que le sirve al restaurante
+## Por qué le sirve al restaurante
 
-Este modelo le sirve al restaurante porque ayuda a detectar condiciones relacionadas con tickets altos, por ejemplo:
+Este modelo le sirve al restaurante porque ayuda a detectar condiciones relaciónadas con tickets altos, por ejemplo:
 
-- turnos donde se vende mÃ¡s
+- turnos donde se vende ms
 - combinaciones de consumo que elevan el ticket
 - ciudades o sucursales con mayor probabilidad de venta alta
 - contextos donde conviene poner atencion operativa o comercial
 
-## Interpretacion rapida
+## Interpretación rápida
 
 - el modelo recupera bien los tickets altos
 - tiene mejor `recall` que `precision`
-- como primer modelo exploratorio es funcional y util para seguimiento en Qlik
+- como primer modelo exploratorio es funcional y útil para seguimiento en Qlik
 
-## Como se deberia ver en Qlik
+## Como se debería ver en Qlik
 
-En Qlik esta salida deberia servir para:
+En Qlik esta salida debería servir para:
 
 - comparar clase real vs clase predicha
 - mostrar la probabilidad de `ticket_alto`

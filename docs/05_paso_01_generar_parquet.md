@@ -2,13 +2,13 @@
 
 ## Objetivo
 
-Tomar el `OLAP` de VÃ­ctor, reconstruir una base por ticket y exportarla a `Parquet` para empezar a trabajar los modelos en Python.
+Tomar el `OLAP` de Víctor, reconstruir una base por ticket y exportarla a `Parquet` para empezar a trabajar los modelos en Python.
 
-## Flujo de ejecucion
+## Flujo de ejecución
 
 ### 1. Revisar el OLAP en DBeaver
 
-Conexion:
+Conexión:
 
 - `Host = localhost`
 - `Port = 5432`
@@ -41,7 +41,7 @@ Ese notebook:
 - valida la estructura
 - exporta el parquet de la etapa `01`
 
-Guia de apoyo para entender esta reconstruccion:
+Guía de apoyo para entender esta reconstrucción:
 
 - `docs/12_entender_base_tickets.md`
 
@@ -59,7 +59,7 @@ Al terminar este paso ya debe existir:
 - un `Parquet` inicial para trabajar en Python
 - el punto de partida para los tres modelos del proyecto
 
-## 6. Que significa ticket en esta etapa
+## 6. Qué significa ticket en esta etapa
 
 En esta fase, un ticket representa una compra resumida del restaurante.
 
@@ -73,7 +73,7 @@ Ese resultado es el que se exporta como `01_base_tickets_modelado.parquet`.
 
 ## 7. Siguiente paso inmediato
 
-Despues de cerrar la etapa `01`, se debe ejecutar:
+Después de cerrar la etapa `01`, se debe ejecutar:
 
 - `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
 

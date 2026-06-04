@@ -1,8 +1,8 @@
-# Guia de Parquets del Proyecto
+# Guía de Parquets del Proyecto
 
-Esta carpeta concentra los archivos `Parquet` del proyecto y su documentacion asociada.
+Esta carpeta concentra los archivos `Parquet` del proyecto y su documentación asociada.
 
-Organizacion por etapa:
+Organización por etapa:
 
 1. `01_Carga_y_Validacion_Parquet`
 2. `02_EDA_Base_Tickets`
@@ -13,15 +13,15 @@ Organizacion por etapa:
 Cada subcarpeta puede contener:
 
 - el archivo `Parquet` principal de la etapa
-- un archivo `.md` que explica que contiene, para que sirve y como se puede visualizar en Qlik
+- un archivo `.md` que explica qué contiene, para qué sirve y cómo se puede visualizar en Qlik
 
-Para evitar confusion, las mÃ©tricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.
+Para evitar confusión, las métricas de los modelos quedaron integradas en los archivos `.md` de cada etapa, no como parquets separados.
 
-Cada uno de estos archivos tambiÃ©n puede regenerarse desde el notebook correspondiente de su etapa.
+Cada uno de estos archivos también puede regenerarse desde el notebook correspondiente de su etapa.
 
-El parquet `01` nace directamente desde la base `restaurante.olap`, mientras que los demÃ¡s se generan a partir de los parquets previos dentro del mismo flujo del proyecto.
+El parquet `01` nace directamente desde la base `restaurante.olap`, mientras que los demás se generan a partir de los parquets previos dentro del mismo flujo del proyecto.
 
-## Por que existen 5 parquets
+## Por qué existen 5 parquets
 
 Los `5` parquets no representan `5` modelos distintos.
 
@@ -32,16 +32,16 @@ La idea del flujo es:
 
 1. construir la base principal
 2. preparar la base para `EDA`
-3. entrenar y exportar el modelo de clasificaciÃ³n
-4. entrenar y exportar el modelo de regresiÃ³n
-5. entrenar y exportar el modelo de segmentaciÃ³n
+3. entrenar y exportar el modelo de clasificación
+4. entrenar y exportar el modelo de regresión
+5. entrenar y exportar el modelo de segmentación
 
-## Que parquets le interesan a Qlik
+## Qué parquets le interesan a Qlik
 
-Para el equipo de Qlik, los archivos mÃ¡s importantes son:
+Para el equipo de Qlik, los archivos más importantes son:
 
 - `03_tickets_clasificados.parquet`
 - `04_tickets_regresion.parquet`
 - `05_clientes_segmentados.parquet`
 
-Los archivos `01` y `02` sirven principalmente para explicar y validar el proceso interno de construccion de la base.
+Los archivos `01` y `02` sirven principalmente para explicar y validar el proceso interno de construcción de la base.

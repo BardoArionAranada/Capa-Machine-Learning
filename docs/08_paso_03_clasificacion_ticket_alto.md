@@ -1,8 +1,8 @@
-# 08 Paso 03 - ClasificaciÃ³n de Ticket Alto
+# 08 Paso 03 - Clasificación de Ticket Alto
 
 ## Objetivo
 
-Entrenar el primer modelo formal del proyecto usando **RegresiÃ³n LogÃ­stica** para clasificar si un ticket es alto o no.
+Entrenar el primer modelo formal del proyecto usando **Regresión Logística** para clasificar si un ticket es alto o no.
 
 ## Entrada
 
@@ -20,7 +20,7 @@ Entrenar el primer modelo formal del proyecto usando **RegresiÃ³n LogÃ­stica
 
 Se usaron variables de contexto y comportamiento del ticket, evitando columnas que dieran fuga directa del target.
 
-## MÃ©tricas validadas
+## Métricas validadas
 
 - `accuracy = 0.6282`
 - `precision = 0.3710`
@@ -30,6 +30,6 @@ Se usaron variables de contexto y comportamiento del ticket, evitando columnas q
 
 ## Conclusiones iniciales
 
-- el modelo sÃ­ logra identificar buena parte de los tickets altos
+- el modelo s logra identificar buena parte de los tickets altos
 - la capacidad de recuperacion de la clase positiva es mejor que la precision
-- como primera capa predictiva del proyecto, el resultado ya es util para continuar
+- como primera capa predictiva del proyecto, el resultado ya es útil para continuar

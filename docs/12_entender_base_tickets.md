@@ -1,10 +1,10 @@
 # 12 Entender la Base de Tickets
 
-## Objetivo de esta guia
+## Objetivo de esta guía
 
-Este documento explica por que el proyecto trabaja con una **base por ticket**, que hace el archivo `sql/04_base_tickets_modelado.sql` y como se relaciona con el notebook `01`.
+Este documento explica por qué el proyecto trabaja con una **base por ticket**, qué hace el archivo `sql/04_base_tickets_modelado.sql` y cómo se relaciona con el notebook `01`.
 
-## Que significa ticket en este proyecto
+## Qué significa ticket en este proyecto
 
 En este proyecto, un **ticket** representa una compra resumida del restaurante.
 
@@ -12,13 +12,13 @@ No se usa la palabra ticket como algo distinto a una compra, sino como una forma
 
 - una cuenta
 - un pedido resumido
-- una compra analÃ­tica reconstruida
+- una compra analítica reconstruida
 
-## Por que se reconstruyen tickets
+## Por qué se reconstruyen tickets
 
 La tabla `olap.fact_ventas` no guarda una fila por compra completa.
 
-Lo que guarda normalmente es un nivel mÃ¡s detallado, donde una misma compra puede aparecer en varias filas porque incluye varios platillos.
+Lo que guarda normalmente es un nivel más detallado, donde una misma compra puede aparecer en varias filas porque incluye varios platillos.
 
 Entonces ocurre esto:
 
@@ -26,7 +26,7 @@ Entonces ocurre esto:
 - cada platillo puede ocupar una fila distinta en `olap.fact_ventas`
 - una sola compra puede repetirse en varias filas
 
-Para Machine Learning conviene trabajar con una unidad mÃ¡s resumida:
+Para Machine Learning conviene trabajar con una unidad más resumida:
 
 - `1 fila = 1 compra`
 
@@ -37,21 +37,21 @@ Esa compra resumida es lo que en el proyecto se llama **ticket modelado**.
 - `olap.fact_ventas` = detalle de venta
 - `ticket modelado` = compra reconstruida y resumida
 
-## Que hace `04_base_tickets_modelado.sql`
+## Qué hace `04_base_tickets_modelado.sql`
 
 Este archivo **no genera el parquet por si solo**.
 
-Su funcion es definir la consulta SQL que:
+Su función es definir la consulta SQL que:
 
 1. toma los datos de `olap.fact_ventas`
 2. une la tabla `olap.dim_platillo`
 3. agrupa varias filas que pertenecen a una misma compra
 4. calcula variables de negocio
-5. deja lista una base analÃ­tica con una fila por ticket
+5. deja lista una base analítica con una fila por ticket
 
 ## Entonces, filtra o transforma
 
-El archivo no esta pensado para filtrar por ciudad, por mes o por una sola sucursal.
+El archivo no está pensado para filtrar por ciudad, por mes o por una sola sucursal.
 
 Lo que hace principalmente es:
 
@@ -64,7 +64,7 @@ Lo que hace principalmente es:
 
 Algunos ejemplos directos que salen de `04_base_tickets_modelado.sql` son:
 
-- `lineas_ticket`
+- `líneas_ticket`
 - `cantidad_total`
 - `platillos_distintos`
 - `categorias_distintas`
@@ -75,7 +75,7 @@ Algunos ejemplos directos que salen de `04_base_tickets_modelado.sql` son:
 - `incluye_platillo_fuerte`
 - `ticket_alto`
 
-Eso convierte el detalle de venta en una base mucho mÃ¡s util para modelar.
+Eso convierte el detalle de venta en una base mucho más útil para modelar.
 
 ## Ejemplo sencillo
 
@@ -99,9 +99,9 @@ El archivo `04_base_tickets_modelado.sql` junta esas filas y las resume en un so
 - `empleado`
 - `fecha`
 
-## Relacion entre SQL, notebook y parquet
+## Relación entre SQL, notebook y parquet
 
-La relaciÃ³n correcta del paso `01` es esta:
+La relación correcta del paso `01` es esta:
 
 1. `sql/04_base_tickets_modelado.sql` define la consulta
 2. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb` ejecuta esa consulta
@@ -116,7 +116,7 @@ En resumen:
 
 ## Flujo completo del proyecto
 
-La secuencia completa queda asi:
+La secuencia completa queda así:
 
 1. `01` se conecta a la base de datos y genera `01_base_tickets_modelado.parquet`
 2. `02` lee el parquet `01` y genera `02_base_eda_tickets.parquet`
@@ -124,7 +124,7 @@ La secuencia completa queda asi:
 4. `04` lee el parquet `02` y genera `04_tickets_regresion.parquet`
 5. `05` lee el parquet `02` y genera `05_clientes_segmentados.parquet`
 
-## Datos de conexiÃ³n para DBeaver
+## Datos de conexión para DBeaver
 
 Para revisar el OLAP desde DBeaver:
 
@@ -135,35 +135,35 @@ Para revisar el OLAP desde DBeaver:
 - `Password = postgres`
 - `Schema = olap`
 
-## Que SQL se puede ejecutar en DBeaver
+## Qué SQL se puede ejecutar en DBeaver
 
 Estos archivos si se pueden usar normalmente en DBeaver:
 
 - `sql/01_exploracion_inicial_olap_victor.sql`
-- `sql/03_validacion_olap_victor.sql`
+- `sql/03_validación_olap_victor.sql`
 - `sql/04_base_tickets_modelado.sql`
 
-## Que SQL no conviene ejecutar por rutina
+## Qué SQL no conviene ejecutar por rutina
 
 - `sql/02_montaje_olap_victor.sql`
 
 Ese archivo reconstruye el esquema `olap` desde cero, por lo que solo sirve para montar otra vez el OLAP si fuera necesario.
 
-## Por que esto le sirve al restaurante
+## Por qué esto le sirve al restaurante
 
-Trabajar por ticket permite responder preguntas utiles para el negocio, por ejemplo:
+Trabajar por ticket permite responder preguntas útiles para el negocio, por ejemplo:
 
-- que condiciones se relacionan con compras altas
-- cuanto podrÃ­a valer un pedido segun su contexto
+- qué condiciones se relaciónan con compras altas
+- cuánto podría valer un pedido según su contexto
 - que patrones de compra se repiten en ciertas sucursales o turnos
-- como se comportan los clientes segun su historial de consumo
+- cómo se comportan los clientes según su historial de consumo
 
-## Que se debe ver al ejecutar los notebooks
+## Qué se debe ver al ejecutar los notebooks
 
-Al correr los notebooks no solo se generan parquets, tambiÃ©n se deben ver resultados visuales y tablas de validaciÃ³n:
+Al correr los notebooks no solo se generan parquets, también se deben ver resultados visuales y tablas de validación:
 
-- `01` muestra validaciones de estructura y forma del dataset
-- `02` muestra exploraciÃ³n con histogramas y boxplots
-- `03` muestra mÃ©tricas, matriz de confusion y curva ROC
-- `04` muestra mÃ©tricas de regresiÃ³n, comparativos y residuos
-- `05` muestra clusters, conteos y dispersion de clientes
+- `01` muestra validaciónes de estructura y forma del dataset
+- `02` muestra exploración con histogramas y boxplots
+- `03` muestra métricas, matriz de confusión y curva ROC
+- `04` muestra métricas de regresión, comparativos y residuos
+- `05` muestra clusters, conteos y dispersión de clientes

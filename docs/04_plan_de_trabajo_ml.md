@@ -2,20 +2,20 @@
 
 ## Objetivo general
 
-Construir la capa de **Machine Learning** del proyecto restaurante a partir del `OLAP` de VÃ­ctor y entregar resultados en `Parquet` para el equipo de Qlik.
+Construir la capa de **Machine Learning** del proyecto restaurante a partir del `OLAP` de Víctor y entregar resultados en `Parquet` para el equipo de Qlik.
 
 ## Flujo aprobado
 
 1. leer datos desde `restaurante.olap`
-2. construir la base analÃ­tica
+2. construir la base analítica
 3. exportar la base a `Parquet`
 4. trabajar en Python sobre el `Parquet`
 5. entrenar y evaluar `3 modelos`
 6. exportar resultados finales en `Parquet`
 
-## Primer entregable tecnico
+## Primer entregable técnico
 
-El primer entregable de esta carpeta serÃ¡ una base por ticket lista para modelado.
+El primer entregable de esta carpeta será una base por ticket lista para modelado.
 
 Archivos asociados:
 
@@ -29,11 +29,11 @@ Salida esperada:
 
 ## Tres modelos definidos
 
-### Modelo 1 - ClasificaciÃ³n
+### Modelo 1 - Clasificación
 
 Objetivo:
 
-- predecir si un ticket serÃ¡ `ticket_alto`
+- predecir si un ticket será `ticket_alto`
 
 Target propuesto:
 
@@ -42,9 +42,9 @@ Target propuesto:
 
 Modelo definido:
 
-- `Regresión LogÃ­stica`
+- `Regresión Logística`
 
-### Modelo 2 - RegresiÃ³n
+### Modelo 2 - Regresión
 
 Objetivo:
 
@@ -54,11 +54,11 @@ Modelo definido:
 
 - `Regresión Lineal`
 
-### Modelo 3 - SegmentaciÃ³n
+### Modelo 3 - Segmentación
 
 Objetivo:
 
-- agrupar clientes por comportamiento histÃ³rico de compra
+- agrupar clientes por comportamiento histórico de compra
 
 Base requerida:
 
@@ -68,7 +68,7 @@ Modelo definido:
 
 - `K-Means`
 
-## Variables utiles para la base por ticket
+## Variables útiles para la base por ticket
 
 - fecha
 - mes
@@ -85,7 +85,7 @@ Modelo definido:
 - capacidad_mesa
 - id_metodo_pago
 - metodo_pago
-- lineas_ticket
+- líneas_ticket
 - cantidad_total
 - platillos_distintos
 - categorias_distintas
@@ -107,7 +107,7 @@ Se planea entregar por lo menos estos archivos:
 
 ## Orden de trabajo en notebooks
 
-El flujo de notebooks serÃ¡:
+El flujo de notebooks será:
 
 1. `notebooks/01_Carga_y_Validacion_Parquet/01_Carga_y_Validacion_Parquet.ipynb`
 2. `notebooks/02_EDA_Base_Tickets/02_EDA_Base_Tickets.ipynb`
