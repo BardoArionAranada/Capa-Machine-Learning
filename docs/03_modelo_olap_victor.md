@@ -47,7 +47,7 @@ Medidas disponibles:
 
 ## Conteos validados
 
-- `olap.fact_ventas = 5380`
+- `olap.fact_ventas = 4770`
 - `olap.dim_tiempo = 365`
 - `olap.dim_cliente = 800`
 - `olap.dim_platillo = 60`
@@ -58,7 +58,7 @@ Medidas disponibles:
 
 ## Hallazgos útiles para modelado
 
-- `olap.fact_ventas` contiene `5380` líneas de venta
+- `olap.fact_ventas` contiene `4770` líneas de venta
 - se pueden reconstruir aproximadamente `1167` tickets analíticos
 - el percentil 75 de `total_pedido` es `525`
 - alrededor del `23.48%` de los tickets reconstruidos quedan clasificados como `ticket_alto` usando ese corte

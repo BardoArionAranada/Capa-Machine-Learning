@@ -26,7 +26,7 @@ Se usaron variables de contexto y comportamiento del ticket, evitando columnas q
 - `precision = 0.3710`
 - `recall = 0.8364`
 - `f1 = 0.5140`
-- `roc_auc = 0.7278`
+- `roc_auc = 0.7311`
 
 ## Conclusiones iniciales
 

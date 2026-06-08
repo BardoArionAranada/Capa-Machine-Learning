@@ -22,9 +22,9 @@ Se usaron variables operativas y de contexto del ticket, evitando columnas que d
 
 ## Métricas validadas
 
-- `mae = 92.3532`
-- `rmse = 111.6319`
-- `r2 = 0.2364`
+- `mae = 92.3808`
+- `rmse = 111.6614`
+- `r2 = 0.2360`
 
 ## Conclusiones iniciales
 

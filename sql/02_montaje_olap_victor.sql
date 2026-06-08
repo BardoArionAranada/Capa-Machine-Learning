@@ -2,10 +2,13 @@
 -- Base objetivo: restaurante
 -- Esquema analitico: olap
 --
--- Nota:
--- Este script respeta la idea general del modelo OLAP compartido por el equipo OLAP,
--- pero corrige y completa lo necesario para que pueda ejecutarse localmente y ser
--- consumido por la capa de Machine Learning.
+-- Este script sigue la estructura final compartida por el equipo OLAP:
+-- - dimensiones separadas
+-- - fact table a nivel platillo vendido dentro de un pedido
+-- - clave primaria compuesta en la fact
+--
+-- Para que la carga funcione con los datos reales, se agrupan lineas repetidas
+-- del mismo platillo dentro del mismo pedido analitico antes de insertar.
 
 DROP SCHEMA IF EXISTS olap CASCADE;
 CREATE SCHEMA olap;
@@ -68,25 +71,33 @@ CREATE TABLE olap.dim_mesa (
 
 -- Dimension de metodo de pago
 CREATE TABLE olap.dim_metodo_pago (
-    id_metodo_pago SERIAL PRIMARY KEY,
+    id_metodo_pago INT PRIMARY KEY,
     metodo_pago VARCHAR(50) UNIQUE
 );
 
 -- Tabla de hechos del cubo de ventas
 CREATE TABLE olap.fact_ventas (
-    id_fact_venta SERIAL PRIMARY KEY,
-    id_tiempo INT,
-    id_cliente INT,
-    id_platillo INT,
-    id_sucursal INT,
-    id_empleado INT,
-    id_mesa INT,
-    id_metodo_pago INT,
+    id_tiempo INT NOT NULL,
+    id_cliente INT NOT NULL,
+    id_platillo INT NOT NULL,
+    id_sucursal INT NOT NULL,
+    id_empleado INT NOT NULL,
+    id_mesa INT NOT NULL,
+    id_metodo_pago INT NOT NULL,
     cantidad INT,
     precio_unitario DECIMAL(10,2),
     subtotal DECIMAL(10,2),
     total_pedido DECIMAL(10,2),
     monto_pago DECIMAL(10,2),
+    PRIMARY KEY (
+        id_tiempo,
+        id_cliente,
+        id_platillo,
+        id_sucursal,
+        id_empleado,
+        id_mesa,
+        id_metodo_pago
+    ),
     FOREIGN KEY (id_tiempo) REFERENCES olap.dim_tiempo(id_tiempo),
     FOREIGN KEY (id_cliente) REFERENCES olap.dim_cliente(id_cliente),
     FOREIGN KEY (id_platillo) REFERENCES olap.dim_platillo(id_platillo),
@@ -157,16 +168,50 @@ SELECT
     m.estado
 FROM public.mesa m;
 
-INSERT INTO olap.dim_metodo_pago (metodo_pago)
-SELECT DISTINCT
-    pa.metodo_pago
-FROM public.pago pa
-WHERE pa.metodo_pago IS NOT NULL
-ORDER BY pa.metodo_pago;
+INSERT INTO olap.dim_metodo_pago (id_metodo_pago, metodo_pago)
+SELECT
+    ROW_NUMBER() OVER (ORDER BY metodo_pago) AS id_metodo_pago,
+    metodo_pago
+FROM (
+    SELECT DISTINCT pa.metodo_pago
+    FROM public.pago pa
+    WHERE pa.metodo_pago IS NOT NULL
+) metodos
+ORDER BY metodo_pago;
 
--- Carga de la tabla de hechos
--- Se sigue la logica del script del equipo OLAP: una fila por detalle de pedido
--- unido con pedido, mesa, pago y dimensiones.
+-- Carga de la fact table
+-- Se agrupan lineas repetidas del mismo platillo dentro del mismo pedido analitico
+-- para respetar la clave primaria compuesta del modelo final.
+WITH fact_source AS (
+    SELECT
+        DATE(p.fecha_hora) AS fecha,
+        p.id_cliente,
+        dp.id_platillo,
+        m.id_sucursal,
+        p.id_empleado,
+        p.id_mesa,
+        pa.metodo_pago,
+        SUM(dp.cantidad) AS cantidad,
+        MIN(dp.precio_unitario) AS precio_unitario,
+        SUM(dp.subtotal) AS subtotal,
+        MAX(p.total) AS total_pedido,
+        MAX(pa.monto) AS monto_pago
+    FROM public.detallepedido dp
+    JOIN public.pedido p
+        ON dp.id_pedido = p.id_pedido
+    JOIN public.mesa m
+        ON p.id_mesa = m.id_mesa
+    JOIN public.pago pa
+        ON pa.id_pedido = p.id_pedido
+    GROUP BY
+        DATE(p.fecha_hora),
+        p.id_cliente,
+        dp.id_platillo,
+        m.id_sucursal,
+        p.id_empleado,
+        p.id_mesa,
+        pa.metodo_pago
+)
 INSERT INTO olap.fact_ventas (
     id_tiempo,
     id_cliente,
@@ -183,28 +228,22 @@ INSERT INTO olap.fact_ventas (
 )
 SELECT
     dt.id_tiempo,
-    p.id_cliente,
-    dp.id_platillo,
-    m.id_sucursal,
-    p.id_empleado,
-    p.id_mesa,
+    fs.id_cliente,
+    fs.id_platillo,
+    fs.id_sucursal,
+    fs.id_empleado,
+    fs.id_mesa,
     mp.id_metodo_pago,
-    dp.cantidad,
-    dp.precio_unitario,
-    dp.subtotal,
-    p.total,
-    pa.monto
-FROM public.detallepedido dp
-JOIN public.pedido p
-    ON dp.id_pedido = p.id_pedido
-JOIN public.mesa m
-    ON p.id_mesa = m.id_mesa
-JOIN public.pago pa
-    ON pa.id_pedido = p.id_pedido
+    fs.cantidad,
+    fs.precio_unitario,
+    fs.subtotal,
+    fs.total_pedido,
+    fs.monto_pago
+FROM fact_source fs
 JOIN olap.dim_tiempo dt
-    ON dt.fecha = DATE(p.fecha_hora)
+    ON dt.fecha = fs.fecha
 JOIN olap.dim_metodo_pago mp
-    ON mp.metodo_pago = pa.metodo_pago;
+    ON mp.metodo_pago = fs.metodo_pago;
 
 -- Indices analiticos
 CREATE INDEX idx_fact_tiempo
@@ -218,3 +257,12 @@ ON olap.fact_ventas(id_platillo);
 
 CREATE INDEX idx_fact_sucursal
 ON olap.fact_ventas(id_sucursal);
+
+CREATE INDEX idx_fact_empleado
+ON olap.fact_ventas(id_empleado);
+
+CREATE INDEX idx_fact_mesa
+ON olap.fact_ventas(id_mesa);
+
+CREATE INDEX idx_fact_metodo_pago
+ON olap.fact_ventas(id_metodo_pago);

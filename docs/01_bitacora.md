@@ -38,7 +38,7 @@ Monté localmente el modelo `OLAP` de Víctor dentro de:
 
 Conteos validados:
 
-- `olap.fact_ventas = 5380`
+- `olap.fact_ventas = 4770`
 - `olap.dim_tiempo = 365`
 - `olap.dim_cliente = 800`
 - `olap.dim_platillo = 60`
@@ -67,7 +67,7 @@ La documentación del repositorio quedó alineada con la situación final del pr
 
 Hallazgos técnicos importantes:
 
-- `olap.fact_ventas` tiene `5380` líneas de venta
+- `olap.fact_ventas` tiene `4770` líneas de venta
 - el cubo permite reconstruir aproximadamente `1167` tickets
 - el percentil 75 de `total_pedido` es `525`
 - eso permite proponer una variable objetivo inicial para clasificación de `ticket_alto`

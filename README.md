@@ -48,7 +48,7 @@ Dimensiones disponibles:
 
 Conteos validados en local:
 
-- `olap.fact_ventas = 5380`
+- `olap.fact_ventas = 4770`
 - `olap.dim_tiempo = 365`
 - `olap.dim_cliente = 800`
 - `olap.dim_platillo = 60`
@@ -59,7 +59,7 @@ Conteos validados en local:
 
 Total de registros del esquema `olap`:
 
-- `6744`
+- `6134`
 
 Observación importante:
 
@@ -228,8 +228,8 @@ Resumen final de salidas:
 
 - etapa `01`: `1167` tickets modelados
 - etapa `02`: `1167` tickets para `EDA`
-- etapa `03`: clasificación de `ticket_alto` con `accuracy = 0.6282` y `roc_auc = 0.7278`
-- etapa `04`: regresión de `total_pedido` con `mae = 92.3532` y `r2 = 0.2364`
+- etapa `03`: clasificación de `ticket_alto` con `accuracy = 0.6282` y `roc_auc = 0.7311`
+- etapa `04`: regresión de `total_pedido` con `mae = 92.3808` y `r2 = 0.2360`
 - etapa `05`: segmentación de `800` clientes en `3` clusters con `silhouette = 0.3836`
 
 ## Coherencia general de los resultados

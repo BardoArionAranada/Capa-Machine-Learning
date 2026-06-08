@@ -56,9 +56,9 @@ Este modelo conviene porque:
 
 Métricas obtenidas en la prueba:
 
-- `mae = 92.3532`
-- `rmse = 111.6319`
-- `r2 = 0.2364`
+- `mae = 92.3808`
+- `rmse = 111.6614`
+- `r2 = 0.2360`
 
 ## Archivo que interesa a Qlik
 

@@ -60,7 +60,7 @@ Métricas obtenidas en la prueba:
 - `precision = 0.3710`
 - `recall = 0.8364`
 - `f1 = 0.5140`
-- `roc_auc = 0.7278`
+- `roc_auc = 0.7311`
 
 ## Archivo que interesa a Qlik
 

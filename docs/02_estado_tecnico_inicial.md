@@ -32,7 +32,7 @@ Sin embargo, la base principal para esta fase queda definida como:
 
 ### OLAP de Víctor
 
-- `olap.fact_ventas = 5380`
+- `olap.fact_ventas = 4770`
 - `olap.dim_tiempo = 365`
 - `olap.dim_cliente = 800`
 - `olap.dim_platillo = 60`
@@ -40,13 +40,13 @@ Sin embargo, la base principal para esta fase queda definida como:
 - `olap.dim_empleado = 50`
 - `olap.dim_mesa = 80`
 - `olap.dim_metodo_pago = 4`
-- total del esquema `olap = 6744`
+- total del esquema `olap = 6134`
 
 ## Interpretación
 
 - El requisito de `10000` datos aplica al `OLTP`.
 - El `OLAP` de Víctor se enfocó en ventas, por eso su volumen es menor.
-- Esta capa puede avanzar con los `5380` registros de `olap.fact_ventas`.
+- Esta capa puede avanzar con los `4770` registros de `olap.fact_ventas`.
 
 ## Decision de trabajo
 
